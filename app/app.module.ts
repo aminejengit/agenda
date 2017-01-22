@@ -7,9 +7,10 @@ import { IntroComponent }  from './components/intro.component';
 import { AboutComponent }  from './components/about.component';
 import { ContactComponent }  from './components/contact.component';
 import { CustomersComponent }  from './components/customers.component';
+import {DataTableModule,SharedModule} from './primeng/primeng';
 
 @NgModule({
-  imports:      [ BrowserModule ],
+  imports:      [ BrowserModule,DataTableModule,SharedModule],
   declarations: [ AppComponent,HeaderComponent,IntroComponent,AboutComponent,ContactComponent,CustomersComponent],
   bootstrap:    [ AppComponent ]
 })
