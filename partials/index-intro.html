@@ -1,456 +1,224 @@
 <section id="intro">
+    <div class="container primary-section-container" *ngIf="showSection == 'intro'">
+        <div class="col-md-4">
+            <div class="portlet searchForm">
+                <div class="portlet-title">
+                    <div class="caption custom-title">
+                        Prenons rendez-vous</div>
 
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    <form action="#" class="form-horizontal">
+                        <div class="form-body">
+                            <div class="form-group medecin">
 
-            <div class="container primary-section-container" >
-                <div class="col-md-4">
-                    <div class="portlet searchForm">
-                        <div class="portlet-title">
-                            <div class="caption custom-title">
-                                Prenons rendez-vous</div>
-                           
-                        </div>
-                        <div class="portlet-body form">
-                            <!-- BEGIN FORM-->
-                            <form action="#" class="form-horizontal"> 
-                                <div class="form-body">
-                                    <div class="form-group medecin">
+                                <div id="medecin" class="col-md-12">
+                                    <input type="text" class="form-control input-circle typeahead" placeholder="Médecin ou Centre ou Clinique">
 
-                                        <div id="medecin" class="col-md-12">
-                                            <input type="text" class="form-control input-circle typeahead" placeholder="Médecin ou Centre ou Clinique">
+                                </div>
+                            </div>
 
-                                        </div>
-                                    </div>
-
-                                    <div class="ouSeparator">
-                                        <span>
+                            <div class="ouSeparator">
+                                <span>
                                             OU
                                         </span>
-                                    </div>
-                                    <div class="form-group specialite">
+                            </div>
+                            <div class="form-group specialite">
 
-                                        <div id="specialite" class="col-md-12">
-                                            <input type="text" class="form-control input-circle typeahead" placeholder="Spécialité ">
+                                <div id="specialite" class="col-md-12">
+                                    <input type="text" class="form-control input-circle typeahead" placeholder="Spécialité ">
 
-                                        </div>
-                                    </div>
-                                    <div class="form-group adresse">
+                                </div>
+                            </div>
+                            <div class="form-group adresse">
 
-                                        <div id="adresse"  class="col-md-12">
-                                            <input type="text" class="form-control input-circle typeahead"  placeholder="Canton ou commune ou adresse">
-                                            <span class="help-block"> Veuillez saisir une localité ou une adresse </span>
-                                            <a href="javascript:;" class="geolocalisation" ></a>
-                                        </div>
-                                    </div>
-                                    <div class="form-group dateHeure">
+                                <div id="adresse" class="col-md-12">
+                                    <input type="text" class="form-control input-circle typeahead" placeholder="Canton ou commune ou adresse">
+                                    <span class="help-block"> Veuillez saisir une localité ou une adresse </span>
+                                    <a href="javascript:;" class="geolocalisation"></a>
+                                </div>
+                            </div>
+                            <div class="form-group dateHeure">
 
-                                        <div class="col-md-12">
-                                            <div class="input-group date form_datetime">
-                                                <input type="text" size="16" id="datetimepicker"  class="form-control " placeholder="Date et heure">
-                                                <span class="input-group-btn input-circle">
+                                <div class="col-md-12">
+                                    <div class="input-group date form_datetime">
+                                        <input type="text" size="16" id="datetimepicker" class="form-control " placeholder="Date et heure">
+                                        <span class="input-group-btn input-circle">
                                                     <button class="btn default date-set" type="button">
                                                         <i class="fa fa-calendar"></i>
                                                     </button>
                                                 </span>
-                                            </div>
-                                        </div>
                                     </div>
+                                </div>
+                            </div>
 
-                                    <div class="form-group last">
+                            <div class="form-group last">
 
-                                        <div class="col-md-12">
-                                            <select class="bs-select form-control input-circle" data-live-search="true" data-size="8">
+                                <div class="col-md-12">
+                                    <select class="bs-select form-control input-circle" data-live-search="true" data-size="8">
                                                 <option value="FR">Français</option>
                                                 <option value="EN">English</option>
                                               
                                                 
                                             </select>
 
-                                        </div>
-                                    </div>
                                 </div>
-                                <div class="form-actions">
-                                    <div class="row">
-                                        <div class="col-md-offset-3 col-md-9">
-                                            <a (click)="showResult();" class="btn btn-circle btn-sm orange form-submit-btn"><i class="fa fa-search"></i> Chercher
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <a (click)="showResult();" class="btn btn-circle btn-sm orange form-submit-btn"><i class="fa fa-search"></i> Chercher
                                             </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- END FORM-->
-                        </div>
-                    </div>
-                </div>
-
-                <div id="SearchContentPanel" class="col-md-8">              
-                    <div id="carousel-example-generic" class="carousel slide carousel-fade " *ngIf="showSecondView == 'slider'" >
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                        </ol>
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner text-uppercase" role="listbox">
-                            <!-- First slide -->
-                            <div class="item carousel-item-one withimg active" >
-                                <div class="container">
-                                    <h3 class="carousel-position-one animate-delay carousel-title-v1" data-animation="animated fadeInDown">
-                                       Tous mes patients sont satisfaits de la prise de rdv en ligne
-                                    </h3>
-                                    
-                                </div>
-                            </div>
-                            <div class="item carousel-item-one" >
-                                <div class="container">
-                                    <h3 class="carousel-position-one animate-delay carousel-title-v1" data-animation="animated fadeInDown">
-                                       Mobile comme vous
-                                    </h3>
-                                    <p class="carousel-position-two animate-delay carousel-subtitle-v1" data-animation="animated fadeInDown">
-                                        Télécharger l'application agendasanté
-                                    
-                                    </p>
-                                    <div class="download-container">
-                                        <img src="assets/onepage2/img/downloads.jpg"  class="download" />
-
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- Second slide -->
-                            <div class="item carousel-item-two" >
-                                <div class="container">
-                                    <h3 class="carousel-position-one animate-delay carousel-title-v2" data-animation="animated fadeInDown">
-                                        Nos médecins partenaires vous offre
-                                    </h3>
-                                    <p class="carousel-position-three animate-delay carousel-subtitle-v2" data-animation="animated fadeInDown">
-                                       <img src="assets/onepage2/img/slidertwo.jpg"  class="cal" /> Un accès facile 24 / 7 a leurs agenda
-                                    </p>
-                                    <div class="social-download">
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Third slide -->
-                            <div class="item carousel-item-three">
-                                <div class="container">
-                                    <h3 class="carousel-position-one animate-delay carousel-title-v2" data-animation="animated fadeInDown">
-                                        Adhérer à l'agendacanté, j'y suis et je reste car
-                                    </h3>
-                                    <p class="carousel-position-three animate-delay carousel-subtitle-v2" data-animation="animated fadeInDown">
-                                       <img src="assets/onepage2/img/puzzle.jpg"  class="cal" /> est une solution adaptée parfaitement a nos besoins patient et medecin
-                                    </p>
-                                    <div class="social-download">
-
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-
-                    <div  class="portlet light " *ngIf="showSecondView == 'result'" >
-
-                        <div class="portlet-title">
-                            <div class="caption caption-md">
-                                <i class="icon-bar-chart theme-font hide"></i>
-                                <span class="caption-subject font-black ">Résultat : </span>
-                                <span class="caption-helper">100</span>
-                                <span class="caption-helper sub">médecins</span>
-                            </div>
-                            <div class="actions">
-                                <div class="btn-group btn-group-devided" data-toggle="buttons">
-                                    <button (click)="showSLider();" type="button" class="btn white btn-sm close-popUp-btn"></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portlet-body scrollableResult">
-
-                            <div class="table-scrollable table-scrollable-borderless">
-                          
-                                <table class="table table-hover table-light">
-                                    <thead>
-                                        <tr >
-
-                                            <th colspan="2"> Nom Prénom </th>
-                                            <th> Spécialité </th>
-                                            <th> Localité / Canton </th>
-                                            <th>  </th>
-                                        </tr>
-                                    </thead>
-                                    <tr class="cd-section" *ngFor="let doctor of doctors">
-                                        <td class="fit">
-                                            <img class="user-pic" src="{{doctor.picture}}"> </td>
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">{{doctor.name}}</a>
-                                        </td>
-
-                                        <td> {{doctor.spec}} </td>
-                                        <td> {{doctor.location}} </td>
-                                        <td >
-                                            <a href="javascript:;" class="btn-consult-detail"> 
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
+                    <!-- END FORM-->
                 </div>
             </div>
-        </section>
-       
-       
-        <div class="modaldetails" style="display: none">
-            
-            <div class="container">
-                <div class="details-header"> 
-                    <a href="javascript:;" class="cd-modal-close">Close</a>
-                </div>
-                
-                <div class="detailsContent">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <!-- BEGIN PROFILE SIDEBAR -->
-                            <div class="profile-sidebar mobile">
-                                <!-- PORTLET MAIN -->
-                                <div class="portlet light profile-sidebar-portlet ">
-                                    <!-- SIDEBAR USERPIC -->
-                                    <div class="profile-userpic col-sm-4 col-md-4">
-                                        <img src="assets/onepage2/img/avatar/profile_user.jpg" class="img-responsive" alt=""> </div>
-                                    <!-- END SIDEBAR USERPIC -->
-                                    <!-- SIDEBAR USER TITLE -->
-                                   
-                                  
-                                       <div class="sidebar-right">
-                                           <div class="profile-usertitle col-sm-8 col-md-8">
-                                        <div class="profile-usertitle-name"> DR Thomas mottat </div>
-                                        <div class="profile-usertitle-job"> Généraliste </div>
-                                    </div>
-                                       <div class="margin-top-0 profile-desc-link">
-                                            <i class="fa fa-globe"></i>
-                                            <a href="http://www.keenthemes.com">www.keenthemes.com</a>
-                                        </div>
-                                        <div class="margin-top-20 profile-desc-link">
-                                            <i class="fa fa-mobile"></i>
-                                            <a href="http://www.twitter.com/keenthemes/">080 2332 5544 1</a>
-                                        </div>
-                                       </div>
-                                  
-                                   
-                                </div>
-                               
-                                <div class="adressmap">
-                                    <div class="portlet light adress-block" style="float:left;margin-bottom: 0;">
-                                    
-                                        <div class="adresse-title">
-                                            Lieu 1
-                                        </div>
-                                        <p class="adresse-text">
-                                            Route de chancy 98 1213 Onex Genéve
-                                        </p>
-                                        <div class="adresse-title">
-                                            Lieu 2
-                                        </div>
-                                        <p class="adresse-text">
-                                            Route de chancy 98 1213 Onex Genéve
-                                        </p>
-                                    
-                                </div>
-                                <div class="portlet light adress-block" style="margin-bottom: 0;">
-                                    <div id="map2" style="width: 100%; height: 260px;margin-top: 20px;"></div>
-                                    <a class="btn btn-circle orange btn-sm iteneraire" > Iténéraire </a>
-                                </div>
-                                </div>
-                                
-                                
-                            </div>
-                            
-                            
-                            
-                            <div class="profile-sidebar">
-                                <!-- PORTLET MAIN -->
-                                <div class="portlet light profile-sidebar-portlet ">
-                                    <!-- SIDEBAR USERPIC -->
-                                    <div class="profile-userpic col-sm-4 col-md-4">
-                                        <img src="assets/onepage2/img/avatar/profile_user.jpg" class="img-responsive" alt=""> </div>
-                                    <!-- END SIDEBAR USERPIC -->
-                                    <!-- SIDEBAR USER TITLE -->
-                                    <div class="profile-usertitle col-sm-8 col-md-8">
-                                        <div class="profile-usertitle-name"> DR Thomas mottat </div>
-                                        <div class="profile-usertitle-job"> Généraliste </div>
-                                    </div>
-                                   
-                                   
-                                </div>
-                                
-                                <div class="portlet light adress-block" style="float:left;margin-bottom: 0;">
-                                    
-                                        <div class="adresse-title">
-                                            Lieu 1
-                                        </div>
-                                        <p class="adresse-text">
-                                            Route de chancy 98 1213 Onex Genéve
-                                        </p>
-                                        <div class="adresse-title">
-                                            Lieu 2
-                                        </div>
-                                        <p class="adresse-text">
-                                            Route de chancy 98 1213 Onex Genéve
-                                        </p>
-                                    
-                                </div>
-                                <div class="portlet light adress-block" style="margin-bottom: 0;">
-                                    <div id="map" style="width: 100%; height: 260px;margin-top: 20px;"></div>
-                                    <a class="btn btn-circle orange btn-sm iteneraire" > Iténéraire </a>
-                                </div>
-                                <!-- END PORTLET MAIN -->
-                                <!-- PORTLET MAIN -->
-                                <div class="portlet light " style="padding-top: 0">
-                                   
-                                    <div>
-                                       <div class="margin-top-0 profile-desc-link">
-                                            <i class="fa fa-globe"></i>
-                                            <a href="http://www.keenthemes.com">www.keenthemes.com</a>
-                                        </div>
-                                        <div class="margin-top-20 profile-desc-link">
-                                            <i class="fa fa-mobile"></i>
-                                            <a href="http://www.twitter.com/keenthemes/">080 2332 5544 1</a>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <!-- END PORTLET MAIN -->
-                            </div>
-                            <!-- END BEGIN PROFILE SIDEBAR -->
-                            <!-- BEGIN PROFILE CONTENT -->
-                            <div class="profile-content">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portlet light prise-de-rendezvous">
-                                            <div class="portlet-title tabbable-line">
-                                                <div class="caption caption-md">
-                                                    <i class="icon-globe theme-font hide"></i>
-                                                    <span class="caption-subject font-blue-madison bold uppercase">Prise de rendez vous</span>
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="portlet-body">
-                                              <div id="datepaginator_sample_4"> </div>
-                                              <div class="available-slot">
-                                                  <div class="col-md-2"> 
-                                                      <span class="available-slot-item" > 07:00 </span> 
-                                                  </div> 
-                                                  <div class="col-md-2"> 
-                                                      <span class="available-slot-item" > 07:15 </span> 
-                                                  </div> 
-                                                  <div class="col-md-2"> 
-                                                      <span class="available-slot-item" > 07:30 </span> 
-                                                  </div> 
-                                                  <div class="col-md-2"> 
-                                                      <span class="available-slot-item" > 07:45 </span> 
-                                                  </div> 
-                                                  <div class="col-md-2"> 
-                                                      <span class="available-slot-item" > 08:00 </span> 
-                                                  </div> 
-                                                  <div class="col-md-2"> 
-                                                      <span class="available-slot-item" > 08:15 </span> 
-                                                  </div> 
-                                                  <div class="col-md-2"> 
-                                                      <span class="available-slot-item" > 08:30 </span> 
-                                                  </div> 
-                                                  <div class="col-md-2"> 
-                                                      <span class="available-slot-item" > 08:45 </span> 
-                                                  </div> 
-                                                  <div class="col-md-2"> 
-                                                      <span class="available-slot-item" > 09:00 </span> 
-                                                  </div> 
-                                                  <div class="col-md-2"> 
-                                                      <span class="available-slot-item" > 09:15 </span> 
-                                                  </div> 
-                                                  <div class="col-md-2"> 
-                                                      <span class="available-slot-item" > 09:30 </span> 
-                                                  </div> 
-                                                  <div class="col-md-2"> 
-                                                      <span class="available-slot-item" > 09:45 </span> 
-                                                  </div> 
-                                              </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="portlet light ">
-                                            <div class="portlet-title tabbable-line">
-                                                <div class="caption caption-md">
-                                                    <i class="icon-globe theme-font hide"></i>
-                                                    <span class="caption-subject font-blue-madison bold uppercase">Détails</span>
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="portlet-body">
-                                                <div class="row detailsRow">
-                                                    <div class="col-md-4 details-title">
-                                                        Membre de la FMH
-                                                    </div>
-                                                    <div class="col-md-8 details-text">
-                                                        OUI
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="row detailsRow">
-                                                    <div class="col-md-4 details-title">
-                                                        Titre de médecin spécialiste
-                                                    </div>
-                                                    <div class="col-md-8 details-text">
-                                                        Médecin interne générale, 1985
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="row detailsRow">
-                                                    <div class="col-md-4 details-title">
-                                                        Attestation de foramtion complémentaires
-                                                    </div>
-                                                    <div class="col-md-8 details-text">
-                                                        * Pratique de laboratoire au cabinet médical (CMPR), 2002 <br/>
-                                                        * Qualification pour les examens radiologiques à forte doses (CMPR), 2002
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="row detailsRow">
-                                                    <div class="col-md-4 details-title">
-                                                       Adresse(s)
-                                                    </div>
-                                                    <div class="col-md-8 details-text">
-                                                        <span style="font-weight: bold;width: 100%;display: block;"> Aresse cabinet médical</span>
-                                                    
-                                                        Cabinet médical 12, ch. beau soleil 1206 Genéve, CE <br/>
-                                                        Téléphone: 080 2332 5544 1 
-                                                    
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="row detailsRow">
-                                                    <div class="col-md-4 details-title">
-                                                        Numero GLN
-                                                    </div>
-                                                    <div class="col-md-8 details-text">
-                                                        7601000037862
-                                                    </div>
-                                                </div>
-                                                
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END PROFILE CONTENT -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
         </div>
+
+        <div id="SearchContentPanel" class="col-md-8">
+            <div id="carousel-example-generic" class="carousel slide carousel-fade " *ngIf="showSecondView == 'slider'">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner text-uppercase" role="listbox">
+                    <!-- First slide -->
+                    <div class="item carousel-item-one withimg active">
+                        <div class="container">
+                            <h3 class="carousel-position-one animate-delay carousel-title-v1" data-animation="animated fadeInDown">
+                                Tous mes patients sont satisfaits de la prise de rdv en ligne
+                            </h3>
+
+                        </div>
+                    </div>
+                    <div class="item carousel-item-one">
+                        <div class="container">
+                            <h3 class="carousel-position-one animate-delay carousel-title-v1" data-animation="animated fadeInDown">
+                                Mobile comme vous
+                            </h3>
+                            <p class="carousel-position-two animate-delay carousel-subtitle-v1" data-animation="animated fadeInDown">
+                                Télécharger l'application agendasanté
+
+                            </p>
+                            <div class="download-container">
+                                <img src="assets/onepage2/img/downloads.jpg" class="download" />
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Second slide -->
+                    <div class="item carousel-item-two">
+                        <div class="container">
+                            <h3 class="carousel-position-one animate-delay carousel-title-v2" data-animation="animated fadeInDown">
+                                Nos médecins partenaires vous offre
+                            </h3>
+                            <p class="carousel-position-three animate-delay carousel-subtitle-v2" data-animation="animated fadeInDown">
+                                <img src="assets/onepage2/img/slidertwo.jpg" class="cal" /> Un accès facile 24 / 7 a leurs
+                                agenda
+                            </p>
+                            <div class="social-download">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Third slide -->
+                    <div class="item carousel-item-three">
+                        <div class="container">
+                            <h3 class="carousel-position-one animate-delay carousel-title-v2" data-animation="animated fadeInDown">
+                                Adhérer à l'agendacanté, j'y suis et je reste car
+                            </h3>
+                            <p class="carousel-position-three animate-delay carousel-subtitle-v2" data-animation="animated fadeInDown">
+                                <img src="assets/onepage2/img/puzzle.jpg" class="cal" /> est une solution adaptée parfaitement
+                                a nos besoins patient et medecin
+                            </p>
+                            <div class="social-download">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="portlet light " *ngIf="showSecondView == 'result'">
+
+                <div class="portlet-title">
+                    <div class="caption caption-md">
+                        <i class="icon-bar-chart theme-font hide"></i>
+                        <span class="caption-subject font-black ">Résultat : </span>
+                        <span class="caption-helper">100</span>
+                        <span class="caption-helper sub">médecins</span>
+                    </div>
+                    <div class="actions">
+                        <div class="btn-group btn-group-devided" data-toggle="buttons">
+                            <button (click)="showSLider();" type="button" class="btn white btn-sm close-popUp-btn"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="portlet-body scrollableResult">
+
+                    <div class="table-scrollable table-scrollable-borderless">
+
+                        <table class="table table-hover table-light">
+                            <thead>
+                                <tr>
+
+                                    <th colspan="2"> Nom Prénom </th>
+                                    <th> Spécialité </th>
+                                    <th> Localité / Canton </th>
+                                    <th> </th>
+                                </tr>
+                            </thead>
+                            <tr class="cd-section" *ngFor="let doctor of doctors">
+                                <td class="fit">
+                                    <img class="user-pic" src="{{doctor.picture}}"> </td>
+                                <td>
+                                    <a (click)="showProfile(doctor);" class="primary-link">{{doctor.name}}</a>
+                                </td>
+
+                                <td> {{doctor.spec}} </td>
+                                <td> {{doctor.location}} </td>
+                                <td>
+                                    <a (click)="showProfile(doctor);" class="btn-consult-detail"> </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div *ngIf="showSection == 'profile'">
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-9">
+            <div class="portlet light container primary-section-container" >
+                <br/>
+                <div class="actions">
+                    <div class="btn-group btn-group-devided" data-toggle="buttons">
+                        <button (click)="showIntro();" type="button" class="btn white btn-sm close-popUp-btn"></button>
+                    </div>
+                </div>
+                <intro-profile [doctor]="selectedDoctorProfile"></intro-profile>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+</div>
