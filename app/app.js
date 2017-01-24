@@ -1,18 +1,21 @@
-var app = angular.module("myApp", ['ngMaterial', 'ngMessages', 'material.svgAssetsCache']);
+var app = angular.module("myApp",[]);
 app.controller("myCtrl", function($scope,dataService) {
-    var self = this;
+
     // handle intro section
     $scope.introSection="slider";
+    $scope.localty="";
     $scope.showSlider = function(){
         $scope.introSection="slider";
     }
+$scope.onvalueChange = function(){
+    console.log($scope.local)
+}
+  
     
     $scope.showResult = function(){
-        console.log($scope.locality+"ffff");
-        if($scope.locality != null){
-            
+        console.log($scope.localty+"ffff");      
             $scope.introSection="result";
-        }   
+           console.log($scope.introSection+"ffff");
     }
     //import search results
     $scope.doctors=dataService.getSearchDoctors();

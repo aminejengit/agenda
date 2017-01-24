@@ -53,15 +53,13 @@
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="favicon.ico" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-    <link rel='stylesheet prefetch' href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.css'>
-    <link rel='stylesheet prefetch' href='https://material.angularjs.org/1.1.1/docs.css'>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
 <!-- DOC: Apply "page-on-scroll" class to the body element to set fixed header layout -->
 
 <body class="page-header-fixed" ng-app="myApp" ng-controller="myCtrl">
-
+   
     <!-- BEGIN MAIN LAYOUT -->
     <!-- Header BEGIN -->
     <div ng-include="'/includes/index-header.html'"></div>
@@ -69,9 +67,12 @@
 
     <!-- BEGIN INTRO SECTION -->
     <section id="intro">
+        <br/>
 
 
-        <div class="container primary-section-container" ng-if="introSection == 'slider' || introSection =='result'">
+        <div class="container primary-section-container" ng-disabled="introSection != 'slider' && introSection !='result'">
+       
+            
             <div class="col-md-4">
                 <div class="portlet searchForm">
                     <div class="portlet-title">
@@ -81,12 +82,14 @@
                     </div>
                     <div class="portlet-body form">
                         <!-- BEGIN FORM-->
-                        <form action="#" class="form-horizontal">
+                         
+                        <div  class="form-horizontal">
                             <div class="form-body">
                                 <div class="form-group medecin">
 
-                                    <div id="medecin" class="col-md-12">
-                                        <input ng-model="doctorOrCenter" type="text" class="form-control input-circle typeahead" placeholder="Médecin ou Centre ou Clinique">
+                                    <div class="col-md-12">
+                                       
+                                        <input ng-change="onvalueChange();" ng-model="local" type="text" class="form-control input-circle typeahead" placeholder="Médecin ou Centre ou Clinique">
 
                                     </div>
                                 </div>
@@ -96,30 +99,7 @@
                                             OU
                                         </span>
                                 </div>
-                                <md-content layout-padding="" layout="column">
-                                    <form ng-submit="$event.preventDefault()">
-                                   
-                                        <md-autocomplete ng-disabled="ctrl.isDisabled" md-no-cache="ctrl.noCache" md-selected-item="ctrl.selectedItem" md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
-                                            md-search-text="ctrl.searchText" md-selected-item-change="ctrl.selectedItemChange(item)"
-                                            md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item.name" md-min-length="0"
-                                            placeholder="Pick an Angular repository" md-menu-class="autocomplete-custom-template">
-                                            <md-item-template>
-                                                <span class="item-title">
-                                                     <md-icon md-svg-icon="img/icons/octicon-repo.svg"></md-icon>
-                                                        <span> {{item.name}} </span>
-                                                        </span>
-                                                        <span class="item-metadata">
-                                                        <span class="item-metastat">
-                                                     <strong>{{item.watchers}}</strong> watchers
-                                                     </span>
-                                                    <span class="item-metastat">
-                                                     <strong>{{item.forks}}</strong> forks
-                                                 </span>
-                                                </span>
-                                            </md-item-template>
-                                        </md-autocomplete>
-                                    </form>
-                                </md-content>
+                                <autocomplete></autocomplete>
                                 <div class="form-group specialite">
 
                                     <div id="specialite" class="col-md-12">
@@ -129,9 +109,10 @@
                                 </div>
                                 <div class="form-group adresse">
 
-                                    <div id="adress" class="col-md-12">
-                                        <input ng-model="locality" type="text" class="form-control input-circle typeahead" placeholder="Canton ou commune ou adresse">
-                                        <span class="help-block" ng-if="locality == null"> Veuillez saisir une localité ou une adresse </span>
+                                    <div  class="col-md-12">
+                                      
+                                        <input  type="text" class="form-control input-circle typeahead" placeholder="Canton ou commune ou adresse">
+                                        <span class="help-block" > Veuillez saisir une localité ou une adresse </span>
                                         <a href="javascript:;" class="geolocalisation"></a>
                                     </div>
                                 </div>
@@ -163,12 +144,12 @@
                             <div class="form-actions">
                                 <div class="row">
                                     <div class="col-md-offset-3 col-md-9">
-                                        <a ng-click="showResult();" href="javascript:;" onclick="if($('body').scrollTop(0)){hideshowPanelResult(this, 'SearchContentPanel')}" class="btn btn-circle btn-sm orange form-submit-btn"><i class="fa fa-search"></i> Chercher
+                                        <a ng-click="showResult();" class="btn btn-circle btn-sm orange form-submit-btn"><i class="fa fa-search"></i> Chercher
 </a>
 </div>
 </div>
 </div>
-</form>
+</div>
 <!-- END FORM-->
 </div>
 </div>
@@ -246,7 +227,7 @@
         </div>
     </div>
 
-    <div id="result" class="portlet ligh pre-scrollable" style="max-height: 420px" ng-if="introSection == 'result'">
+    <div class="portlet ligh pre-scrollable" style="max-height: 420px" ng-if="introSection == 'result'">
 
 <div class="portlet-title">
     <div class="caption caption-md">
@@ -915,15 +896,10 @@
 </script>
 <!-- END JAVASCRIPTS -->
 <!-- Import Angular Files -->
-<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js'></script>
-<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js'></script>
-<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js'></script>
-<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js'></script>
-<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js'></script>
-<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js'></script>
-<script src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.js'></script>
+
 <script src="app/app.js"></script>
 <script src="app/services/DataService.js"></script>
+<script src="app/component/autocomplete.component.js"></script>
 <!-- END Import Angular Files -->
 </body>
 <!-- END BODY -->
