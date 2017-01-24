@@ -89,8 +89,8 @@
 
                                         <div class="col-md-12">
 
-                                            <input ng-change="onvalueChangeDoctorCenter();" ng-model="doctorOrCenter" type="text" class="form-control input-circle typeahead" placeholder="Médecin ou Centre ou Clinique">
-                                            <autocomplete></autocomplete>
+                                           <!-- <input ng-change="onvalueChangeDoctorCenter();" ng-model="doctorOrCenter" type="text" class="form-control input-circle typeahead" placeholder="Médecin ou Centre ou Clinique"> -->
+                                            <autocomplete  datatype="Médecin ou Centre ou Clinique" ></autocomplete>
                                         </div>
                                     </div>
 
@@ -105,16 +105,16 @@
                                     <div class="form-group specialite">
 
                                         <div id="specialite" class="col-md-12">
-                                            <input ng-change="onvalueChangeDoctorCenter();" ng-model="spec" type="text" class="form-control input-circle typeahead" placeholder="Spécialité ">
-                                             <autocomplete></autocomplete>
+                                            
+                                             <autocomplete datatype="Spécialité" ></autocomplete>
                                         </div>
                                     </div>
                                     <div class="form-group adresse">
 
                                         <div  class="col-md-12">
 
-                                            <input  ng-change="onvalueChangeDoctorCenter();" ng-model="local" type="text" class="form-control input-circle typeahead" placeholder="Canton ou commune ou adresse">
-                                            <span class="help-block" > Veuillez saisir une localité ou une adresse </span>
+                                          <autocomplete datatype="Canton ou commune ou adresse"></autocomplete>
+                                                <span class="help-block" > Veuillez saisir une localité ou une adresse </span>
                                             <a href="javascript:;" class="geolocalisation"></a>
                                         </div>
                                     </div>
@@ -122,6 +122,7 @@
 
                                         <div class="col-md-12">
                                             <div class="input-group date form_datetime">
+                                              
                                                 <input ng-change="onvalueChangeDoctorCenter();" ng-model="date" type="text" size="16" id="datetimepicker" class="form-control " placeholder="Date et heure">
                                                 <span class="input-group-btn input-circle">
                                                     <button class="btn default date-set" type="button">
@@ -901,6 +902,7 @@
         <script src="assets/pages/scripts/myScript.js" type="text/javascript"></script>
         <script src="app/app.js"></script>
         <script src="app/services/DataService.js"></script>
+        <script src="app/services/ValidationService.js"></script>
         <script src="app/component/autocomplete.component.js"></script>
         <!-- END Import Angular Files -->
     </body>

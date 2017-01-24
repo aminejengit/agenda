@@ -1,13 +1,19 @@
-<style>
+
+    <style>
     .selected {
         background-color: #CFD8DC !important;
         color: white;
     }
     .options {
         margin: 0 0 2em 0;
+        background-color: white;
         list-style-type: none;
         padding: 0;
         width: 15em;
+        height: 150px; 
+        overflow-y: scroll;
+        position:absolute;
+        z-index: 3;
     }
     .options li {
         cursor: pointer;
@@ -46,11 +52,11 @@
         margin-right: .8em;
         border-radius: 4px 0 0 4px;
     </style>
-    {{$ctrl.show}}
-    <input ng-model="query" ng- ng-change="$ctrl.change();" type="text"/>{{$ctrl.selected}}
-    <ul class="options" ng-if="$ctrl.showOptions">
+
+    <input  ng-model="$ctrl.querry" ng-change="$ctrl.change();" value="{{$ctrl.querry}}" type="text" class="form-control input-circle typeahead" placeholder="{{$ctrl.datatype}}">
+    <ul class="options" ng-if="$ctrl.showOptions" >
         <li ng-repeat="option in $ctrl.propositions">
-            <div ng-click="$ctrl.select(option)">
+            <div ng-blur="$ctrl.hideOptions();" ng-click="$ctrl.select(option)">
                 {{option}}
             </div>
         </li>
