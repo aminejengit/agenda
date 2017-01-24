@@ -9,16 +9,17 @@ app.controller("myCtrl", function ($scope, dataService) {
 
     //input validation 
     $scope.validInput = false;
-    $scope.doctorOrCenter="";
-    $scope.spec="";
-    $scope.local="";
-    $scope.date="";
-    $scope.onvalueChangeDoctorCenter = function () {   
-         if($scope.doctorOrCenter.length>0 || (
-                $scope.spec.length>0 && $scope.local.length>0 && $scope.date.length>0 
-                )){
+    $scope.doctorOrCenter = "";
+    $scope.spec = "";
+    $scope.local = "";
+    $scope.date = "";
+    $scope.showAutoCompleteMédecin
+    $scope.onvalueChangeDoctorCenter = function () {
+        if ($scope.doctorOrCenter.length > 0 || (
+                $scope.spec.length > 0 && $scope.local.length > 0 && $scope.date.length > 0
+                )) {
             $scope.validInput = true;
-        }else{
+        } else {
             $scope.validInput = false;
         }
         console.log($scope.validInput);
@@ -26,14 +27,13 @@ app.controller("myCtrl", function ($scope, dataService) {
 
 
     $scope.showResult = function () {
-        if($scope.validInput){
+        if ($scope.validInput) {
             $scope.introSection = "result";
         }
-        $scope.validInput=false;
     }
-    
-  
-    
+
+
+
     //import search results
     $scope.doctors = dataService.getSearchDoctors();
     // select doctor to show his profile
@@ -44,6 +44,6 @@ app.controller("myCtrl", function ($scope, dataService) {
     }
     $scope.closeProfile = function () {
         $scope.introSection = "result";
-        
+
     }
 });

@@ -1,11 +1,21 @@
 <html>
 
-<head>
-</head>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-<body  ng-app="myApp" ng-controller="myCtrl">
-    <script src="app/app.js"></script>
-    <script src="app/services/DataService.js"></script>
+    <head>
+        <link rel='stylesheet prefetch' href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.css'>
+        <link rel='stylesheet prefetch' href='https://material.angularjs.org/1.1.1/docs.css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    </head>
+
+    <body  ng-app="myApp" ng-controller="myCtrl">
+        d
+    <autocomplete></autocomplete>
+    <script>
+                var app = angular.module("myApp", []);
+                app.controller("myCtrl", function ($scope) {
+
+                });
+    </script>
+    <script src="app/component/autocomplete.component.js"></script>
 </body>
 
 </html>
