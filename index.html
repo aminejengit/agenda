@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>{{firstName}}</title>
+    <title>agenda santé</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="" name="description" />
@@ -89,7 +89,7 @@
 
                                     <div class="col-md-12">
                                        
-                                        <input ng-change="onvalueChange();" ng-model="local" type="text" class="form-control input-circle typeahead" placeholder="Médecin ou Centre ou Clinique">
+                                        <input ng-change="onvalueChangeDoctorCenter();" ng-model="doctorOrCenter" type="text" class="form-control input-circle typeahead" placeholder="Médecin ou Centre ou Clinique">
 
                                     </div>
                                 </div>
@@ -99,11 +99,13 @@
                                             OU
                                         </span>
                                 </div>
-                                <autocomplete></autocomplete>
+                        
+                                <span class="help-block"> Veuillez saisir un médecin ou un centre ou remplir le forumulaire de recherche avancée</span>
+                        
                                 <div class="form-group specialite">
 
                                     <div id="specialite" class="col-md-12">
-                                        <input type="text" class="form-control input-circle typeahead" placeholder="Spécialité ">
+                                        <input ng-change="onvalueChangeDoctorCenter();" ng-model="spec" type="text" class="form-control input-circle typeahead" placeholder="Spécialité ">
 
                                     </div>
                                 </div>
@@ -111,7 +113,7 @@
 
                                     <div  class="col-md-12">
                                       
-                                        <input  type="text" class="form-control input-circle typeahead" placeholder="Canton ou commune ou adresse">
+                                        <input  ng-change="onvalueChangeDoctorCenter();" ng-model="local" type="text" class="form-control input-circle typeahead" placeholder="Canton ou commune ou adresse">
                                         <span class="help-block" > Veuillez saisir une localité ou une adresse </span>
                                         <a href="javascript:;" class="geolocalisation"></a>
                                     </div>
@@ -120,7 +122,7 @@
 
                                     <div class="col-md-12">
                                         <div class="input-group date form_datetime">
-                                            <input type="text" size="16" id="datetimepicker" class="form-control " placeholder="Date et heure">
+                                            <input ng-change="onvalueChangeDoctorCenter();" ng-model="date" type="text" size="16" id="datetimepicker" class="form-control " placeholder="Date et heure">
                                             <span class="input-group-btn input-circle">
                                                     <button class="btn default date-set" type="button">
                                                         <i class="fa fa-calendar"></i>
@@ -286,7 +288,7 @@
 <!-- END INTRO SECTION -->
 
 <!-- BEGIN MAIN LAYOUT -->
-<div class="page-content" ng-if="introSection != 'profile'">
+<div class="page-content" ng-disabled="introSection == 'profile'">
 
     <!-- BEGIN ABOUT SECTION -->
     <section id="about">
