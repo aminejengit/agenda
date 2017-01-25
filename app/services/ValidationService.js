@@ -1,4 +1,4 @@
-app.service("validationService", function () {
+app.service("validationService", function (dataService) {
     this.validInputs = false;
     this.doctorOrCenter = false;
     this.spec = false;
@@ -12,14 +12,18 @@ app.service("validationService", function () {
             value = false;
         }
         switch (autocompleteName) {
-            case "Médecin ou Centre ou Clinique":
+            case "Médecin ou Centre ou Clinique": {
                 this.doctorOrCenter = value;
+            }
                 break;
-            case "Spécialité":
+            case "Spécialité": {
                 this.spec = value;
+            }
                 break;
-            case "Canton ou commune ou adresse":
+            case "Canton ou commune ou adresse": {
                 this.local = value;
+            }
+
                 break;
             default:
                 return []

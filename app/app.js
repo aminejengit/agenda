@@ -10,7 +10,7 @@ app.controller("myCtrl", function ($scope, dataService,validationService) {
 
 
     $scope.showResult = function () {
-        console.log(validationService.isValidInputs());
+        console.log(dataService.selecteddoctorName);
         if (validationService.isValidInputs()) {
             $scope.introSection = "result";
             $scope.showError = false;

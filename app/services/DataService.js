@@ -1,38 +1,41 @@
 
 app.service("dataService", function () {
+    var self = this;
+
+    self.selecteddoctorName = "#";
+    self.selectedspec = "#";
+    self.selectedlocal = "#";
+
     this.mockedDoctors = [
-        { picture: "assets/onepage2/img/avatar/1.png", name: 'DR. Hamadi Kharrat', spec: "Généraliste", location: "Onex / Genève" },
-        { picture: "assets/onepage2/img/avatar/2.png", name: 'DR. Monique DUNANT', spec: "Dermatologue", location: " ncy / Genève" },
-        { picture: "assets/onepage2/img/avatar/3.png", name: 'R. Jean FAVRE', spec: "Gynécologue", location: "Nyon / Vaud" },
-        { picture: "assets/onepage2/img/avatar/4.png", name: 'DR. Denis CHEVRELEY', spec: "Généraliste", location: "Avry / Fribourg" },
-        { picture: "assets/onepage2/img/avatar/5.png", name: 'DR. Jacqueline DUPONT', spec: "Généraliste", location: "Vex / Va is" }
+        { picture: "assets/onepage2/img/avatar/1.png", name: 'DR. Ben Thompson', spec: "cardiologie", location: "Onex / Genève" },
+        { picture: "assets/onepage2/img/avatar/2.png", name: 'DR. Monique DUNANT', spec: "gynécologie", location: " ncy / Genève" },
+        { picture: "assets/onepage2/img/avatar/3.png", name: 'R. Jean FAVRE', spec: "pédiatrie", location: "Nyon / Vaud" },
+        { picture: "assets/onepage2/img/avatar/4.png", name: 'DR. Denis CHEVRELEY', spec: "néonatologie", location: "Avry / Fribourg" },
+        { picture: "assets/onepage2/img/avatar/5.png", name: 'DR. Jacqueline DUPONT', spec: "radiologie", location: "Vex / Va is" }
     ];
 
 
-    this.mockedDoctorNames= ["","DR. Hamadi Kharrat","DR. Monique DUNANT","R. Jean FAVRE","DR. Denis CHEVRELEY","DR. Jacqueline DUPONT"];
-
-
-    this.mockedSpecs = ["","cardiologie", "chirurgie", "dermatologie", "gynécologie", "médecine générale", "néonatologie",
-        "néphrologie", "neurologie","odontologie","oncologie","obstétrique","ophtalmologie","orthopédie","pédiatrie",
-        "pneumologie","psychiatrie","radiologie","radiothérapie","rhumatologie"];
-
-    this.mockedAdress = ["","Alabama", "Alaska", "Arizona", "Arkansas", "California",
-        "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii",
-        "Idaho"
-    ];
+    this.getmockedDoctorvalues = function (key) {
+        var result = [];
+        for (doctor in self.mockedDoctors) {
+            result.push(self.mockedDoctors[doctor]['' + key]);
+        }
+        return result;
+    }
 
 
     this.getDoctorsEntities = function (querry) {
-        return this.mockedDoctors;
+        return self.filterdoctors();
     }
     this.getSearchDoctors = function (querry) {
-        return this.filterby(this.mockedDoctorNames,querry);
+        console.log(this.getmockedDoctorvalues("name"), querry);
+        return this.filterby(this.getmockedDoctorvalues("name"), querry);
     }
     this.getSearchSpecs = function (querry) {
-        return this.filterby(this.mockedSpecs,querry);
+        return this.filterby(this.getmockedDoctorvalues("spec"), querry);
     }
     this.getSearchLocals = function (querry) {
-        return this.filterby(this.mockedAdress,querry);
+        return this.filterby(this.getmockedDoctorvalues("location"), querry);
     }
 
     this.filterby = function (table, querry) {
@@ -41,6 +44,21 @@ app.service("dataService", function () {
             if (table[elmt].toLowerCase().includes(querry.toLowerCase())) {
                 result.push(table[elmt]);
             }
+        }
+        return result;
+    }
+
+    this.filterdoctors = function () {
+        var result = [];
+        var doctorIterator;
+        for (doctor in self.mockedDoctors) {
+            doctorIterator = self.mockedDoctors[doctor];
+                 console.log(self.selecteddoctorName);
+                if (doctorIterator.name.toLowerCase().includes(self.selecteddoctorName.toLowerCase()) || (doctorIterator.spec.toLowerCase().includes(self.selectedspec.toLowerCase())) && (doctorIterator.location.toLowerCase().includes(self.selectedlocal.toLowerCase()))) {
+                    result.push(doctorIterator);
+                }
+            
+
         }
         return result;
     }

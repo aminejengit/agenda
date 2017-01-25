@@ -1,6 +1,5 @@
 app.component('autocomplete', {
     bindings: {
-        placeholder : '@',
         datatype: '@'
     },
     transclude: true,
@@ -21,6 +20,7 @@ app.component('autocomplete', {
             }
         }
         this.select = function (option) {
+            this.setdata(option);
             if ( option != "close"){
                 this.querry = option;
             } else{
@@ -41,6 +41,21 @@ app.component('autocomplete', {
                     return []
             }
         }
+
+          this.setdata = function (data) {
+            switch (this.datatype) {
+                case "Médecin ou Centre ou Clinique":
+                    return dataService.selecteddoctorName(data);
+                case "Spécialité":
+                    return dataService.selectedspec(data);
+                case "Canton ou commune ou adresse":
+                    return dataService.selectedlocal(data);
+                default:
+                    return []
+            }
+        }
+    
+       
     },
     templateUrl: '/partials/autocomplete.html'
 });
