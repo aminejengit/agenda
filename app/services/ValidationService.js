@@ -28,7 +28,7 @@ app.service("validationService", function () {
 
     this.isValidInputs = function () {
         if (this.doctorOrCenter || (
-            this.spec && this.local
+            this.local
         )) {
             return true;
         } else {
