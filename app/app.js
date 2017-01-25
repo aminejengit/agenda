@@ -13,6 +13,10 @@ app.controller("myCtrl", function ($scope, dataService,validationService) {
         console.log(validationService.isValidInputs());
         if (validationService.isValidInputs()) {
             $scope.introSection = "result";
+            $scope.showError = false;
+        }else{
+            $scope.showError = true;
+            $scope.introSection = "slider";
         }
     }
     //import search results

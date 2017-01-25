@@ -22,7 +22,7 @@
                                        <div class="sidebar-right">
                                            <div class="profile-usertitle col-sm-8 col-md-8">
                                         <div class="profile-usertitle-name"> {{selectedDoctor.name}} </div>
-                                        <div class="profile-usertitle-job"> {{selectedDoctor.spec}}} </div>
+                                        <div class="profile-usertitle-job"> {{selectedDoctor.spec}} </div>
                                     </div>
                                        <div class="margin-top-0 profile-desc-link">
                                             <i class="fa fa-globe"></i>
@@ -134,6 +134,14 @@
                                             </div>
                                             <div class="portlet-body">
                                               <div id="datepaginator_sample_4"> </div>
+                                              <script>
+                                              var UIDatepaginator=function(){return{init:function(){$("#datepaginator_sample_1").datepaginator(),$("#datepaginator_sample_2").datepaginator({size:"small"}),$("#datepaginator_sample_3").datepaginator({size:"small"}),
+                    $("#datepaginator_sample_4").datepaginator({
+                        size:"small",
+                        onSelectedDateChanged:function(a,t){
+                            alert("Selected date: "+moment(t).format("Do, MMM YYYY"))}})}}}();
+jQuery(document).ready(function(){UIDatepaginator.init()});
+                                              </script>
                                               <div class="available-slot">
                                                   <div class="col-md-2"> 
                                                       <span class="available-slot-item" > 07:00 </span> 

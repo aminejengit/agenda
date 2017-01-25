@@ -1,7 +1,7 @@
 
 app.service("dataService", function () {
     this.mockedDoctors = [
-        { picture: "assets/onepage2/img/avatar/1.png", name: 'DR. Thomas MOTTAT', spec: "Généraliste", location: "Onex / Genève" },
+        { picture: "assets/onepage2/img/avatar/1.png", name: 'DR. Hamadi Kharrat', spec: "Généraliste", location: "Onex / Genève" },
         { picture: "assets/onepage2/img/avatar/2.png", name: 'DR. Monique DUNANT', spec: "Dermatologue", location: " ncy / Genève" },
         { picture: "assets/onepage2/img/avatar/3.png", name: 'R. Jean FAVRE', spec: "Gynécologue", location: "Nyon / Vaud" },
         { picture: "assets/onepage2/img/avatar/4.png", name: 'DR. Denis CHEVRELEY', spec: "Généraliste", location: "Avry / Fribourg" },
@@ -9,14 +9,14 @@ app.service("dataService", function () {
     ];
 
 
-    this.mockedDoctorNames= ["","DR. Thomas MOTTAT","DR. Monique DUNANT","R. Jean FAVRE","DR. Denis CHEVRELEY","DR. Jacqueline DUPONT"];
+    this.mockedDoctorNames= ["","DR. Hamadi Kharrat","DR. Monique DUNANT","R. Jean FAVRE","DR. Denis CHEVRELEY","DR. Jacqueline DUPONT"];
 
 
     this.mockedSpecs = ["","cardiologie", "chirurgie", "dermatologie", "gynécologie", "médecine générale", "néonatologie",
         "néphrologie", "neurologie","odontologie","oncologie","obstétrique","ophtalmologie","orthopédie","pédiatrie",
         "pneumologie","psychiatrie","radiologie","radiothérapie","rhumatologie"];
 
-    var mockedAdress = ["","Alabama", "Alaska", "Arizona", "Arkansas", "California",
+    this.mockedAdress = ["","Alabama", "Alaska", "Arizona", "Arkansas", "California",
         "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii",
         "Idaho"
     ];
@@ -38,7 +38,7 @@ app.service("dataService", function () {
     this.filterby = function (table, querry) {
         var result = ["close"];
         for (elmt in table) {
-            if (table[elmt].includes(querry)) {
+            if (table[elmt].toLowerCase().includes(querry.toLowerCase())) {
                 result.push(table[elmt]);
             }
         }

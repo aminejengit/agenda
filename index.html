@@ -47,7 +47,6 @@
               />
 
         <link href="assets/onepage2/scripts/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
-        <link href="assets/onepage2/css/custom.css" rel="stylesheet" type="text/css" />
         <link href="assets/pages/css/profile.css" rel="stylesheet" type="text/css" />
         <link href="assets/pages/css/jquery.datetimepicker.css" rel="stylesheet" type="text/css" />
         <!-- END THEME STYLES -->
@@ -100,7 +99,7 @@
                                         </span>
                                     </div>
 
-                                    <span class="help-block"> Veuillez saisir un médecin ou un centre ou remplir le forumulaire de recherche avancée</span>
+                                    <span ng-if="showError" style="color: red"> Veuillez saisir un médecin ou un centre ou remplir la forumulaire de recherche avancée</span>
 
                                     <div class="form-group specialite">
 
@@ -262,7 +261,8 @@
                                     <div class="table-scrollable table-scrollable-borderless scrollableResult">
                                     <tr class="cd-section" ng-repeat="doctor in doctors">
                                         <td class="fit">
-                                            <img class="user-pic" src="{{doctor.picture}}"> </td>
+                                            <img class="user-pic" src="{{doctor.picture}}"> 
+                                        </td>
                                         <td>
                                             <a ng-click="showProfile(doctor);" class="primary-link">{{doctor.name}}</a>
                                         </td>

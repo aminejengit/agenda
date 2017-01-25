@@ -25,6 +25,7 @@ app.component('autocomplete', {
                 this.querry = option;
             } else{
                 this.querry="";
+                validationService.setBooleanVal(this.datatype,this.querry);
             }
             this.showOptions = false;
         }
@@ -39,10 +40,6 @@ app.component('autocomplete', {
                 default:
                     return []
             }
-        }
-        this.hideOptions = function(){
-            
-            console.log(this.showOptions);
         }
     },
     templateUrl: '/partials/autocomplete.html'
