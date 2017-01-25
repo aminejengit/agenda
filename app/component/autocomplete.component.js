@@ -45,11 +45,11 @@ app.component('autocomplete', {
           this.setdata = function (data) {
             switch (this.datatype) {
                 case "Médecin ou Centre ou Clinique":
-                    return dataService.selecteddoctorName(data);
+                    return dataService.selecteddoctorName=data;
                 case "Spécialité":
-                    return dataService.selectedspec(data);
+                    return dataService.selectedspec=data;
                 case "Canton ou commune ou adresse":
-                    return dataService.selectedlocal(data);
+                    return dataService.selectedlocal=data;
                 default:
                     return []
             }
