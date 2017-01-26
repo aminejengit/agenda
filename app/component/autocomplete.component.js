@@ -1,17 +1,18 @@
 app.component('autocomplete', {
     bindings: {
-        datatype: '@'
+        datatype: '@',
+        placeholder : '@'
     },
     transclude: true,
-    controller: function Controller(dataService,validationService,$timeout) {
+    controller: function Controller(dataService, validationService, $timeout) {
 
         this.showOptions = false;
         this.querry = "";
         this.selected = "";
         this.change = function () {
-            
-            validationService.setBooleanVal(this.datatype,this.querry);
-            
+
+            validationService.setBooleanVal(this.datatype, this.querry);
+
             this.propositions = this.selectSerchs();
             if (this.querry.length > 0) {
                 this.showOptions = true;
@@ -21,41 +22,44 @@ app.component('autocomplete', {
         }
         this.select = function (option) {
             this.setdata(option);
-            if ( option != "close"){
+            if (option != "close") {
                 this.querry = option;
-            } else{
-                this.querry="";
-                validationService.setBooleanVal(this.datatype,this.querry);
+            } else {
+                this.querry = "";
+                validationService.setBooleanVal(this.datatype, this.querry);
             }
             this.showOptions = false;
         }
         this.selectSerchs = function () {
             switch (this.datatype) {
-                case "Médecin ou Centre ou Clinique":
+                case "doctor":
                     return dataService.getSearchDoctors(this.querry);
-                case "Spécialité":
+                case "spec":
                     return dataService.getSearchSpecs(this.querry);
-                case "Canton ou commune ou adresse":
+                case "local":
                     return dataService.getSearchLocals(this.querry);
                 default:
                     return []
             }
         }
 
-          this.setdata = function (data) {
+        this.setdata = function (data) {
             switch (this.datatype) {
-                case "Médecin ou Centre ou Clinique":
-                    return dataService.selecteddoctorName=data;
-                case "Spécialité":
-                    return dataService.selectedspec=data;
-                case "Canton ou commune ou adresse":
-                    return dataService.selectedlocal=data;
+                case "doctor":
+                    dataService.selecteddoctorName = data;
+                    break;
+                case "spec":
+                    dataService.selectedspec = data;
+                    break;
+                case "local":
+                    dataService.selectedlocal = data;
+                    break;
                 default:
                     return []
             }
         }
-    
-       
+
+
     },
     templateUrl: '/partials/autocomplete.html'
 });

@@ -53,7 +53,7 @@
         border-radius: 4px 0 0 4px;
     </style>
 
-    <input  ng-model="$ctrl.querry" ng-change="$ctrl.change();" value="{{$ctrl.querry}}" type="text" class="form-control input-circle typeahead" placeholder="{{$ctrl.datatype}}">
+    <input  ng-model="$ctrl.querry" ng-change="$ctrl.change();" value="{{$ctrl.querry}}" type="text" class="form-control input-circle typeahead" placeholder="{{$ctrl.placeholder}}">
     <ul class="options" ng-if="$ctrl.showOptions" >
         <li ng-repeat="option in $ctrl.propositions">
             <div ng-blur="$ctrl.hideOptions();" ng-click="$ctrl.select(option)">

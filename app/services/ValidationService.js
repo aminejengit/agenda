@@ -3,6 +3,8 @@ app.service("validationService", function (dataService) {
     this.doctorOrCenter = false;
     this.spec = false;
     this.local = false;
+    
+    
 
     this.setBooleanVal = function (autocompleteName, querry) {
         var value;
@@ -12,15 +14,15 @@ app.service("validationService", function (dataService) {
             value = false;
         }
         switch (autocompleteName) {
-            case "Médecin ou Centre ou Clinique": {
+            case "doctor": {
                 this.doctorOrCenter = value;
             }
                 break;
-            case "Spécialité": {
+            case "spec": {
                 this.spec = value;
             }
                 break;
-            case "Canton ou commune ou adresse": {
+            case "local": {
                 this.local = value;
             }
 

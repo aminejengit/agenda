@@ -28,7 +28,6 @@ app.service("dataService", function () {
         return self.filterdoctors();
     }
     this.getSearchDoctors = function (querry) {
-        console.log(this.getmockedDoctorvalues("name"), querry);
         return this.filterby(this.getmockedDoctorvalues("name"), querry);
     }
     this.getSearchSpecs = function (querry) {
@@ -53,11 +52,17 @@ app.service("dataService", function () {
         var doctorIterator;
         for (doctor in self.mockedDoctors) {
             doctorIterator = self.mockedDoctors[doctor];
-                 console.log(self.selecteddoctorName);
-                if (doctorIterator.name.toLowerCase().includes(self.selecteddoctorName.toLowerCase()) || (doctorIterator.spec.toLowerCase().includes(self.selectedspec.toLowerCase())) && (doctorIterator.location.toLowerCase().includes(self.selectedlocal.toLowerCase()))) {
-                    result.push(doctorIterator);
-                }
-            
+            if (self.selecteddoctorName == "") {
+                self.selecteddoctorName = "#";
+            }
+            if (self.selecteddoctorName != "" && self.selecteddoctorName != "#") {
+                self.selectedspec = "#";
+                self.selectedlocal = "#"
+            }
+            if (doctorIterator.name.toLowerCase().includes(self.selecteddoctorName.toLowerCase()) || (doctorIterator.spec.toLowerCase().includes(self.selectedspec.toLowerCase())) && (doctorIterator.location.toLowerCase().includes(self.selectedlocal.toLowerCase()))) {
+                result.push(doctorIterator);
+            }
+
 
         }
         return result;

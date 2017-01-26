@@ -140,43 +140,84 @@
                         size:"small",
                         onSelectedDateChanged:function(a,t){
                             alert("Selected date: "+moment(t).format("Do, MMM YYYY"))}})}}}();
-jQuery(document).ready(function(){UIDatepaginator.init()});
+                                jQuery(document).ready(function(){UIDatepaginator.init()});
                                               </script>
+                                              <div ng-if="isconnected">
                                               <div class="available-slot">
-                                                  <div class="col-md-2"> 
-                                                      <span class="available-slot-item" > 07:00 </span> 
+                                                  <div class="col-md-2" ng-click="schedule();" > 
+                                                      <span  class="available-slot-item" > 07:00 </span> 
                                                   </div> 
-                                                  <div class="col-md-2"> 
+                                                  <div class="col-md-2" ng-click="schedule();"> 
                                                       <span class="available-slot-item" > 07:15 </span> 
                                                   </div> 
-                                                  <div class="col-md-2"> 
+                                                  <div class="col-md-2" ng-click="schedule();"> 
                                                       <span class="available-slot-item" > 07:30 </span> 
                                                   </div> 
-                                                  <div class="col-md-2"> 
+                                                  <div class="col-md-2" ng-click="schedule();"> 
                                                       <span class="available-slot-item" > 07:45 </span> 
                                                   </div> 
-                                                  <div class="col-md-2"> 
+                                                  <div class="col-md-2" ng-click="schedule();"> 
                                                       <span class="available-slot-item" > 08:00 </span> 
                                                   </div> 
-                                                  <div class="col-md-2"> 
+                                                  <div class="col-md-2" ng-click="schedule();"> 
                                                       <span class="available-slot-item" > 08:15 </span> 
                                                   </div> 
-                                                  <div class="col-md-2"> 
+                                                  <div class="col-md-2" ng-click="schedule();"> 
                                                       <span class="available-slot-item" > 08:30 </span> 
                                                   </div> 
-                                                  <div class="col-md-2"> 
+                                                  <div class="col-md-2" ng-click="schedule();"> 
                                                       <span class="available-slot-item" > 08:45 </span> 
                                                   </div> 
-                                                  <div class="col-md-2"> 
+                                                  <div class="col-md-2" ng-click="schedule();"> 
                                                       <span class="available-slot-item" > 09:00 </span> 
                                                   </div> 
-                                                  <div class="col-md-2"> 
+                                                  <div class="col-md-2" ng-click="schedule();"> 
                                                       <span class="available-slot-item" > 09:15 </span> 
                                                   </div> 
-                                                  <div class="col-md-2"> 
+                                                  <div class="col-md-2" ng-click="schedule();"> 
                                                       <span class="available-slot-item" > 09:30 </span> 
                                                   </div> 
-                                                  <div class="col-md-2"> 
+                                                  <div class="col-md-2" ng-click="schedule();"> 
+                                                      <span class="available-slot-item" > 09:45 </span> 
+                                                  </div> 
+                                              </div>
+                                            </div>
+                                             <div ng-if="!isconnected">
+                                              <div class="available-slot">
+                                                  <div class="col-md-2" data-target="#responsive" data-toggle="modal" > 
+                                                      <span  class="available-slot-item" > 07:00 </span> 
+                                                  </div> 
+                                                  <div class="col-md-2" data-target="#responsive" data-toggle="modal"> 
+                                                      <span class="available-slot-item" > 07:15 </span> 
+                                                  </div> 
+                                                  <div class="col-md-2" data-target="#responsive" data-toggle="modal"> 
+                                                      <span class="available-slot-item" > 07:30 </span> 
+                                                  </div> 
+                                                  <div class="col-md-2" data-target="#responsive" data-toggle="modal"> 
+                                                      <span class="available-slot-item" > 07:45 </span> 
+                                                  </div> 
+                                                  <div class="col-md-2" data-target="#responsive" data-toggle="modal"> 
+                                                      <span class="available-slot-item" > 08:00 </span> 
+                                                  </div> 
+                                                  <div class="col-md-2" data-target="#responsive" data-toggle="modal"> 
+                                                      <span class="available-slot-item" > 08:15 </span> 
+                                                  </div> 
+                                                  <div class="col-md-2" data-target="#responsive" data-toggle="modal"> 
+                                                      <span class="available-slot-item" > 08:30 </span> 
+                                                  </div> 
+                                                  <div class="col-md-2" data-target="#responsive" data-toggle="modal"> 
+                                                      <span class="available-slot-item" > 08:45 </span> 
+                                                  </div> 
+                                                  <div class="col-md-2" data-target="#responsive" data-toggle="modal"> 
+                                                      <span class="available-slot-item" > 09:00 </span> 
+                                                  </div> 
+                                                  <div class="col-md-2" data-target="#responsive" data-toggle="modal"> 
+                                                      <span class="available-slot-item" > 09:15 </span> 
+                                                  </div> 
+                                                  <div class="col-md-2" data-target="#responsive" data-toggle="modal"> 
+                                                      <span class="available-slot-item" > 09:30 </span> 
+                                                  </div> 
+                                                  <div class="col-md-2" data-target="#responsive" data-toggle="modal"> 
                                                       <span class="available-slot-item" > 09:45 </span> 
                                                   </div> 
                                               </div>

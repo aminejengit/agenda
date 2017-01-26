@@ -57,11 +57,12 @@
     <!-- BEGIN BODY -->
     <!-- DOC: Apply "page-on-scroll" class to the body element to set fixed header layout -->
 
-    <body class="page-header-fixed" ng-app="myApp" ng-controller="myCtrl">
+    <body class="page-header-fixed" ng-app="myApp" ng-controller="myCtrl as ctrl">
 
         <!-- BEGIN MAIN LAYOUT -->
         <!-- Header BEGIN -->
         <div ng-include="'/includes/index-header.html'"></div>
+        <div ng-include="'/includes/index-connection.html'"></div>
         <!-- Header END -->
 
         <!-- BEGIN INTRO SECTION -->
@@ -89,7 +90,7 @@
                                         <div class="col-md-12">
 
                                            <!-- <input ng-change="onvalueChangeDoctorCenter();" ng-model="doctorOrCenter" type="text" class="form-control input-circle typeahead" placeholder="Médecin ou Centre ou Clinique"> -->
-                                            <autocomplete  datatype="Médecin ou Centre ou Clinique" ></autocomplete>
+                                            <autocomplete  datatype="doctor" placeholder="{{doctorsPlaceHolder}}"></autocomplete>
                                         </div>
                                     </div>
 
@@ -105,14 +106,14 @@
 
                                         <div id="specialite" class="col-md-12">
                                             
-                                             <autocomplete datatype="Spécialité" ></autocomplete>
+                                             <autocomplete datatype="spec" placeholder="{{specPlaceHolder}}" ></autocomplete>
                                         </div>
                                     </div>
                                     <div class="form-group adresse">
 
                                         <div  class="col-md-12">
 
-                                          <autocomplete datatype="Canton ou commune ou adresse"></autocomplete>
+                                          <autocomplete datatype="local" placeholder="{{localPlaceHolder}}" ></autocomplete>
                                                 <span class="help-block" > Veuillez saisir une localité ou une adresse </span>
                                             <a href="javascript:;" class="geolocalisation"></a>
                                         </div>
@@ -158,6 +159,7 @@
                 </div>
 
                 <div id="SearchContentPanel" class="col-md-8">
+                    <div ng-include="'/includes/index-schedule.html'" ng-if="introSection == 'schedule'"></div>
                     <div id="carousel-example-generic" class="carousel slide carousel-fade" ng-if="introSection == 'slider'">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
@@ -546,72 +548,8 @@
                 <!-- End Footer Coypright -->
             </section>
             <!-- END CONTACT SECTION -->
-            <div id="responsive" class="modal fade login-popUp" style="border-radius: 0;" tabindex="-1" data-width="760">
-                <div class="modal-header" style="border: none">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6 login-form">
-                            <div class="">
-                                <h4 style="padding-left: 15px;font-size: 24px;">Se connecter</h4>
-                                <div class="portlet searchForm">
-
-                                    <div class="portlet-body form">
-                                        <!-- BEGIN FORM-->
-                                        <form action="#" class="form-horizontal">
-                                            <div class="form-body">
-                                                <div class="form-group" style="margin-bottom: 17px;">
-
-                                                    <div class="col-md-12">
-                                                        <input type="text" class="form-control input-circle" placeholder="Nom Prénom">
-
-                                                    </div>
-                                                </div>
-                                                <div class="form-group" style="margin-bottom: 17px;">
-
-                                                    <div class="col-md-12">
-                                                        <input type="password" class="form-control input-circle" placeholder="********">
-
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="form-actions">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <a href="javascript:;" onclick="" class="btn btn-circle btn-sm orange form-submit-btn connect-btn-form"> Connecter
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <!-- END FORM-->
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-md-6 inscrire-form">
-                            <div class="">
-                                <h4 style="font-size: 24px;" >S'inscrire</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus tortor ex, </p>
-
-                                <p>
-                                    <a class="btn btn-circle orange btn-sm form-submit-btn inscrire-form-btn customBTN" data-hide="responsive" data-target="#inscription"
-                                       data-toggle="modal"> inscrire
-                                    </a>
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
             </div>
+            
 
 
 
