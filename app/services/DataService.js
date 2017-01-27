@@ -1,10 +1,10 @@
 
 app.service("dataService", function () {
     var self = this;
-
-    self.selecteddoctorName = "#";
-    self.selectedspec = "#";
-    self.selectedlocal = "#";
+    var undefinedQuerry = "#";
+    self.selecteddoctorName = undefinedQuerry;
+    self.selectedspec = undefinedQuerry;
+    self.selectedlocal = undefinedQuerry;
 
     this.mockedDoctors = [
         { picture: "assets/onepage2/img/avatar/1.png", name: 'DR. Ben Thompson', spec: "cardiologie", location: "Onex / Genève" },
@@ -15,56 +15,38 @@ app.service("dataService", function () {
     ];
 
 
-    this.getmockedDoctorvalues = function (key) {
-        var result = [];
-        for (doctor in self.mockedDoctors) {
-            result.push(self.mockedDoctors[doctor]['' + key]);
-        }
-        return result;
-    }
-
-
     this.getDoctorsEntities = function (querry) {
         return self.filterdoctors();
     }
-    this.getSearchDoctors = function (querry) {
-        return this.filterby(this.getmockedDoctorvalues("name"), querry);
-    }
-    this.getSearchSpecs = function (querry) {
-        return this.filterby(this.getmockedDoctorvalues("spec"), querry);
-    }
-    this.getSearchLocals = function (querry) {
-        return this.filterby(this.getmockedDoctorvalues("location"), querry);
-    }
 
-    this.filterby = function (table, querry) {
-        var result = ["close"];
-        for (elmt in table) {
-            if (table[elmt].toLowerCase().includes(querry.toLowerCase())) {
-                result.push(table[elmt]);
-            }
-        }
-        return result;
-    }
 
     this.filterdoctors = function () {
         var result = [];
         var doctorIterator;
         for (doctor in self.mockedDoctors) {
             doctorIterator = self.mockedDoctors[doctor];
-            if (self.selecteddoctorName == "") {
-                self.selecteddoctorName = "#";
-            }
-            if (self.selecteddoctorName != "" && self.selecteddoctorName != "#") {
-                self.selectedspec = "#";
-                self.selectedlocal = "#"
-            }
-            if (doctorIterator.name.toLowerCase().includes(self.selecteddoctorName.toLowerCase()) || (doctorIterator.spec.toLowerCase().includes(self.selectedspec.toLowerCase())) && (doctorIterator.location.toLowerCase().includes(self.selectedlocal.toLowerCase()))) {
-                result.push(doctorIterator);
-            }
 
 
+            if (self.selecteddoctorName != null) {
+                if (doctorIterator.name.toLowerCase().includes(self.selecteddoctorName.toLowerCase())) {
+                    result.push(doctorIterator);
+                }
+            }
+
+            else if (self.selectedspec != null && self.selectedlocal != null) {
+                if (doctorIterator.spec.toLowerCase().includes(self.selectedspec.toLowerCase()) && (doctorIterator.location.toLowerCase().includes(self.selectedlocal.toLowerCase()))) {
+                    result.push(doctorIterator);
+                }
+
+            }
+            else if (self.selectedlocal != null) {
+                if (doctorIterator.location.toLowerCase().includes(self.selectedlocal.toLowerCase())) {
+                    result.push(doctorIterator);
+                }
+
+            }
         }
+
         return result;
     }
 

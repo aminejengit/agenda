@@ -1,13 +1,16 @@
-var app = angular.module("myApp", []);
-app.controller("myCtrl", function ($scope, dataService, validationService) {
+var app = angular.module("myApp", ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
+app.controller("myCtrl", function ($scope, dataService) {
     var self = this;
-    this.initPlaceHolders = function () {
-        $scope.doctorsPlaceHolder = "Médecin ou Centre ou Clinique";
-        $scope.specPlaceHolder = "Spécialité";
-        $scope.localPlaceHolder = "Canton ou commune ou adresse"
-    }
-    this.initPlaceHolders();
-    // handle intro section
+
+
+    var _selected;
+    $scope.selected = undefined;
+    $scope.doctorList = dataService.mockedDoctors;
+
+
+
+
+
     $scope.introSection = "slider";
     $scope.showSlider = function () {
         $scope.introSection = "slider";
@@ -17,12 +20,22 @@ app.controller("myCtrl", function ($scope, dataService, validationService) {
 
 
     $scope.showResult = function () {
-        if (validationService.isValidInputs()) {
+        if ($scope.selectedDoc != null) {
+            dataService.selecteddoctorName = $scope.selectedDoc.name;
+        } else {
+            dataService.selecteddoctorName = dataService.undefinedQuerry;
+        }
+        if (($scope.selectedForSpec != null) && ($scope.selectedLocal != null)) {
+            dataService.selectedspec = $scope.selectedForSpec.spec;
+            dataService.selectedlocal = $scope.selectedLocal.location;
+        } else {
+            dataService.selectedspec = dataService.undefinedQuerry;
+            dataService.selectedlocal = dataService.undefinedQuerry
+        }
+        if ($scope.selectedDoc != null || $scope.selectedLocal != null) {
             $scope.doctors = dataService.getDoctorsEntities();
             $scope.introSection = "result";
             $scope.showError = false;
-            self.initPlaceHolders();
-            console.log($scope.doctorsPlaceHolder);
         } else {
             $scope.showError = true;
             $scope.introSection = "slider";
