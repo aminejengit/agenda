@@ -106,8 +106,8 @@
   </a>
 </script>
 
-<input type="text" ng-model="selectedDoc" placeholder="Médecin ou Centre ou Clinique" uib-typeahead="doctor as doctor.name for doctor in doctorList | filter:{name:$viewValue}"
-    typeahead-template-url="doctorTemplate.html" class="form-control" typeahead-show-hint="true" typeahead-min-length="0">
+<input type="text" ng-model="selectedDoc" ng-change="selectDoctor" placeholder="Médecin ou Centre ou Clinique" uib-typeahead="doctor as doctor.name for doctor in doctorList | filter:{name:$viewValue}"
+    typeahead-template-url="doctorTemplate.html" class="form-control" typeahead-show-hint="true" typeahead-min-length="0" typeahead-on-select="onSelect($item, $model, $label)">
 
 </div>
 </div>
@@ -118,7 +118,7 @@
                                         </span>
 </div>
 
-<span ng-if="showError" style="color: red"> Veuillez saisir un médecin, un centre ou une adresse</span>
+
 
 <div class="form-group specialite">
 
@@ -126,7 +126,7 @@
 
         
 
-<input type="text" ng-model="selectedForSpec"  placeholder="Spécialité" uib-typeahead="doctor as doctor.spec for doctor in doctorList | filter:$viewValue | limitTo:8" class="form-control">
+<input type="text"  typeahead-on-select="onSelectForSearch($item, $model, $label)" ng-model="selectedForSpec"  placeholder="Spécialité" uib-typeahead="doctor as doctor.spec for doctor in doctorList | filter:$viewValue | limitTo:8" class="form-control">
 
     </div>
 </div>
@@ -134,8 +134,8 @@
 
     <div class="col-md-12">
 
-<input type="text" ng-model="selectedLocal"  placeholder="Canton ou commune ou adresse" uib-typeahead="doctor as doctor.location for doctor in doctorList | filter:$viewValue | limitTo:8" class="form-control">
-        <span class="help-block"> Veuillez saisir une localité ou une adresse </span>
+<input type="text" typeahead-on-select="onSelectForSearch($item, $model, $label)"  ng-model="selectedLocal"  placeholder="Canton ou commune ou adresse" uib-typeahead="doctor as doctor.location for doctor in doctorList | filter:$viewValue | limitTo:8" class="form-control">
+        <span ng-if="showError" style="color: red"> Veuillez saisir un canton une commune ou une adresse</span>
         <a href="javascript:;" class="geolocalisation"></a>
     </div>
 </div>

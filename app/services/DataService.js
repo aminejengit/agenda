@@ -15,25 +15,27 @@ app.service("dataService", function () {
     ];
 
 
-    this.getDoctorsEntities = function (querry) {
-        return self.filterdoctors();
-    }
 
 
-    this.filterdoctors = function () {
+    this.doctorFilterDoctorsForDoctorFiled = function () {
         var result = [];
         var doctorIterator;
         for (doctor in self.mockedDoctors) {
             doctorIterator = self.mockedDoctors[doctor];
-
-
-            if (self.selecteddoctorName != null) {
+            if (self.selecteddoctorName != self.undefinedQuerry) {
                 if (doctorIterator.name.toLowerCase().includes(self.selecteddoctorName.toLowerCase())) {
                     result.push(doctorIterator);
                 }
             }
-
-            else if (self.selectedspec != null && self.selectedlocal != null) {
+        }
+        return result;
+    }
+    this.getfilterdoctorsForSearch = function () {
+        var result = [];
+        var doctorIterator;
+        for (doctor in self.mockedDoctors) {
+            doctorIterator = self.mockedDoctors[doctor];
+             if (self.selectedspec != self.undefinedQuerry && self.selectedlocal != self.undefinedQuerry) {
                 if (doctorIterator.spec.toLowerCase().includes(self.selectedspec.toLowerCase()) && (doctorIterator.location.toLowerCase().includes(self.selectedlocal.toLowerCase()))) {
                     result.push(doctorIterator);
                 }
