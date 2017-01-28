@@ -35,11 +35,10 @@ app.service("dataService", function () {
         var doctorIterator;
         for (doctor in self.mockedDoctors) {
             doctorIterator = self.mockedDoctors[doctor];
-             if (self.selectedspec != self.undefinedQuerry && self.selectedlocal != self.undefinedQuerry) {
+            if (self.selectedspec != self.undefinedQuerry && self.selectedlocal != self.undefinedQuerry) {
                 if (doctorIterator.spec.toLowerCase().includes(self.selectedspec.toLowerCase()) && (doctorIterator.location.toLowerCase().includes(self.selectedlocal.toLowerCase()))) {
                     result.push(doctorIterator);
                 }
-
             }
             else if (self.selectedlocal != null) {
                 if (doctorIterator.location.toLowerCase().includes(self.selectedlocal.toLowerCase())) {
@@ -48,7 +47,6 @@ app.service("dataService", function () {
 
             }
         }
-
         return result;
     }
 

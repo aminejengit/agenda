@@ -2,14 +2,7 @@ var app = angular.module("myApp", ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
 app.controller("myCtrl", function ($scope, dataService) {
     var self = this;
 
-
-    var _selected;
-    $scope.selected = undefined;
     $scope.doctorList = dataService.mockedDoctors;
-
-
-
-
 
     $scope.introSection = "slider";
     $scope.showSlider = function () {
@@ -69,23 +62,22 @@ app.controller("myCtrl", function ($scope, dataService) {
         $scope.introSection = "result";
     }
     // connection 
+    $scope.connectionError = false;
     $scope.isconnected = false;
     $scope.connect = function () {
 
-        if (self.username == "user" && self.username == "user") {
+        if (self.username == "user" && self.password == "user") {
             $scope.isconnected = true;
+             $scope.connectionError = false;
+        }else{
+            $scope.connectionError = true;
         }
     }
     $scope.schedule = function () {
         if (!$scope.isconnected) {
-            var elemnt = angular.element(document.querySelector('#responsive'));
-            console.log(elemnt);
+            $('#responsive').modal('show'); 
         } else {
             $scope.introSection = "schedule";
         }
     }
-
-
-
-
 });
