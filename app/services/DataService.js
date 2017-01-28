@@ -14,7 +14,9 @@ app.service("dataService", function () {
         { picture: "assets/onepage2/img/avatar/5.png", name: 'DR. Jacqueline DUPONT', spec: "radiologie", location: "Vex / Va is" }
     ];
 
-
+   this.isconnected=function(username,password){
+       return username == "user" && password == "user";
+   }
 
 
     this.doctorFilterDoctorsForDoctorFiled = function () {
@@ -35,11 +37,10 @@ app.service("dataService", function () {
         var doctorIterator;
         for (doctor in self.mockedDoctors) {
             doctorIterator = self.mockedDoctors[doctor];
-             if (self.selectedspec != self.undefinedQuerry && self.selectedlocal != self.undefinedQuerry) {
+            if (self.selectedspec != self.undefinedQuerry && self.selectedlocal != self.undefinedQuerry) {
                 if (doctorIterator.spec.toLowerCase().includes(self.selectedspec.toLowerCase()) && (doctorIterator.location.toLowerCase().includes(self.selectedlocal.toLowerCase()))) {
                     result.push(doctorIterator);
                 }
-
             }
             else if (self.selectedlocal != null) {
                 if (doctorIterator.location.toLowerCase().includes(self.selectedlocal.toLowerCase())) {
@@ -48,7 +49,6 @@ app.service("dataService", function () {
 
             }
         }
-
         return result;
     }
 

@@ -56,7 +56,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
     <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.4.0.js"></script>
     <script src="example.js"></script>
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+   
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -68,38 +68,38 @@
     <!-- Header BEGIN -->
     <div ng-include="'/includes/index-header.html'"></div>
     <div style=" margin-left: 300px;">
-    <div ng-include="'/includes/index-connection.html'"></div>
-    </div>
-    <!-- Header END -->
+<div ng-include="'/includes/index-connection.html'"></div>
+</div>
+<!-- Header END -->
 
-    <!-- BEGIN INTRO SECTION -->
-    <section id="intro">
-        <br/>
-
-
-        <div class="container primary-section-container" ng-disabled="introSection != 'profile'">
+<!-- BEGIN INTRO SECTION -->
+<section id="intro">
+    <br/>
 
 
-            <div class="col-md-4">
-                <div class="portlet searchForm">
-                    <div class="portlet-title">
-                        <div class="caption custom-title">
-                            Prenons rendez-vous</div>
-
-                    </div>
-                    <div class="portlet-body form">
-                        <!-- BEGIN FORM-->
-
-                        <div class="form-horizontal">
-                            <div class="form-body">
-                                <div class="form-group medecin">
-
-                                    <div class="col-md-12">
-
-                                        <!-- <input ng-change="onvalueChangeDoctorCenter();" ng-model="doctorOrCenter" type="text" class="form-control input-circle typeahead" placeholder="Médecin ou Centre ou Clinique"> -->
+    <div class="container primary-section-container" ng-disabled="introSection != 'profile'">
 
 
-                                        <script type="text/ng-template" id="doctorTemplate.html">
+        <div class="col-md-4">
+            <div class="portlet searchForm">
+                <div class="portlet-title">
+                    <div class="caption custom-title">
+                        Prenons rendez-vous</div>
+
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+
+                    <div class="form-horizontal">
+                        <div class="form-body">
+                            <div class="form-group medecin">
+
+                                <div class="col-md-12">
+
+                                    <!-- <input ng-change="onvalueChangeDoctorCenter();" ng-model="doctorOrCenter" type="text" class="form-control input-circle typeahead" placeholder="Médecin ou Centre ou Clinique"> -->
+
+
+                                    <script type="text/ng-template" id="doctorTemplate.html">
   <a>
       <img ng-src="{{match.model.picture}}" width="16">
       <span ng-bind-html="match.label | uibTypeaheadHighlight:query"></span>
@@ -124,9 +124,10 @@
 
     <div id="specialite" class="col-md-12">
 
-        
 
-<input type="text"  typeahead-on-select="onSelectForSearch($item, $model, $label)" ng-model="selectedForSpec"  placeholder="Spécialité" uib-typeahead="doctor as doctor.spec for doctor in doctorList | filter:$viewValue | limitTo:8" class="form-control">
+
+        <input type="text" typeahead-on-select="onSelectForSearch($item, $model, $label)" ng-model="selectedForSpec" placeholder="Spécialité"
+            uib-typeahead="doctor as doctor.spec for doctor in doctorList | filter:$viewValue | limitTo:8" class="form-control">
 
     </div>
 </div>
@@ -134,10 +135,11 @@
 
     <div class="col-md-12">
 
-<input type="text" typeahead-on-select="onSelectForSearch($item, $model, $label)"  ng-model="selectedLocal"  placeholder="Canton ou commune ou adresse" uib-typeahead="doctor as doctor.location for doctor in doctorList | filter:$viewValue | limitTo:8" class="form-control">
+        <input type="text" typeahead-on-select="onSelectForSearch($item, $model, $label)" ng-model="selectedLocal" placeholder="Canton ou commune ou adresse"
+            uib-typeahead="doctor as doctor.location for doctor in doctorList | filter:$viewValue | limitTo:8" class="form-control">
         <span ng-if="showError" style="color: red"> Veuillez saisir un canton une commune ou une adresse</span>
-        <a href="javascript:;" class="geolocalisation"></a>
-    </div>
+<a href="javascript:;" class="geolocalisation"></a>
+</div>
 </div>
 <div class="form-group dateHeure">
 
@@ -181,7 +183,9 @@
 </div>
 
 <div id="SearchContentPanel" class="col-md-8">
-    <div ng-include="'/includes/index-schedule.html'" ng-if="introSection == 'schedule'"></div>
+    <div ng-include="'/includes/index-schedule.html'" ng-if="introSection == 'schedule'">
+    
+    </div>
     <div id="carousel-example-generic" class="carousel slide carousel-fade" ng-if="introSection == 'slider'">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -575,197 +579,6 @@
 
 
 
-<div id="inscription" class="modal fade login-popUp settingsModal" style="border-radius: 0;" tabindex="-1" data-width="760">
-<div class="modal-header" style="border: none">
-<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-
-</div>
-<div class="modal-body">
-    <div class="row">
-        <div class="col-md-12 login-form">
-            <div class="">
-                <h4 style="padding-left: 15px;font-size: 24px;">Inscription</h4>
-<div class="portlet searchForm">
-
-    <div class="portlet-body form">
-        <!-- BEGIN FORM-->
-        <form action="#" class="form-horizontal">
-            <div class="form-body">
-                <div class="form-group" style="margin-bottom: 17px;">
-
-<div class="col-md-12">
-    <input type="text" class="form-control input-circle" placeholder="Nom Prénom">
-
-</div>
-</div>
-<div class="form-group" style="margin-bottom: 17px;">
-
-<div class="col-md-12">
-    <input type="text" class="form-control input-circle" placeholder="E-mail">
-
-</div>
-</div>
-<div class="form-group" style="margin-bottom: 17px;">
-
-<div class="col-md-12">
-    <input type="text" class="form-control input-circle" placeholder="Mobile">
-
-</div>
-</div>
-<div class="form-group" style="margin-bottom: 17px;">
-
-<div class="col-md-12">
-    <input type="password" class="form-control input-circle" placeholder="Mot de passe">
-
-</div>
-</div>
-<div class="form-group" style="margin-bottom: 17px;">
-
-<div class="col-md-12">
-    <input type="password" class="form-control input-circle" placeholder="Confirmer mot de passe">
-
-</div>
-</div>
-
-</div>
-<div class="form-actions">
-    <div class="row">
-        <div class="col-md-12">
-            <a class="btn btn-circle orange btn-sm form-submit-btn connect-btn-form customBTN" data-hide="inscription" data-target="#step"
-                data-toggle="modal"> S'inscrire
-                                                        </a>
-
-        </div>
-    </div>
-</div>
-</form>
-<!-- END FORM-->
-</div>
-</div>
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
-
-<div id="step" class="modal fade login-popUp settingsModal" style="border-radius: 0;" tabindex="-1" data-width="760">
-<div class="modal-header" style="border: none">
-<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-
-</div>
-<div class="modal-body" style="padding: 0;">
-<div class="row">
-    <div class="col-md-12 login-form">
-        <div class="col-md-12 form-box">
-            <form role="form" action="" method="post" class="f1">
-                <div class="f1-steps">
-                    <div class="f1-progress">
-                        <div class="f1-progress-line" data-now-value="50" data-number-of-steps="2" style="width: 50%;"></div>
-</div>
-<div class="f1-step active">
-    <div class="f1-step-icon">1</div>
-</div>
-<div class="f1-step" style="float: right;text-align: right;">
-<div class="f1-step-icon">2</div>
-</div>
-
-</div>
-
-
-
-<fieldset>
-    <div class="step-header">
-        <h4>Bravo!</h4>
-        <p>
-            l'étape 1 de cotre inscription à été réussi avec succès
-            <span>
-                                                    Nous avons envoyé un code de validation à votre adresse e-mail
-                                                    <strong>veuillez le saissir </strong>
-                                                </span>
-        </p>
-    </div>
-    <div class="row">
-        <div class="form-group col-md-3">
-            <label class="sr-only" for="f1-first-name">First name</label>
-            <input type="text" name="f1-first-name" placeholder="" class="f1-first-name form-control" id="f1-first-name">
-        </div>
-        <div class="form-group col-md-3">
-            <label class="sr-only" for="f1-last-name">Last name</label>
-            <input type="text" name="f1-last-name" placeholder="" class="f1-last-name form-control" id="f1-last-name">
-        </div>
-        <div class="form-group col-md-3">
-            <label class="sr-only" for="f1-last-name">Last name</label>
-            <input type="text" name="f1-last-name" placeholder="" class="f1-last-name form-control" id="f1-last-name">
-        </div>
-        <div class="form-group col-md-3">
-            <label class="sr-only" for="f1-last-name">Last name</label>
-            <input type="text" name="f1-last-name" placeholder="" class="f1-last-name form-control" id="f1-last-name">
-        </div>
-    </div>
-
-
-    <div class="f1-buttons">
-
-        <button type="button" class="btn btn-circle orange btn-sm btn-next">Next</button>
-    </div>
-</fieldset>
-
-<fieldset>
-    <div class="step-header">
-        <h4>Bravo!</h4>
-        <p>
-            l'étape 2 de cotre inscription à été réussi avec succès
-            <span>
-                                                    Nous avons envoyé un code de validation à votre adresse mobile
-                                                    <strong>veuillez le saissir </strong>
-                                                </span>
-        </p>
-    </div>
-    <div class="row">
-        <div class="form-group col-md-3">
-            <label class="sr-only" for="f1-first-name">First name</label>
-            <input type="text" name="f1-first-name" placeholder="" class="f1-first-name form-control" id="f1-first-name">
-        </div>
-        <div class="form-group col-md-3">
-            <label class="sr-only" for="f1-last-name">Last name</label>
-            <input type="text" name="f1-last-name" placeholder="" class="f1-last-name form-control" id="f1-last-name">
-        </div>
-        <div class="form-group col-md-3">
-            <label class="sr-only" for="f1-last-name">Last name</label>
-            <input type="text" name="f1-last-name" placeholder="" class="f1-last-name form-control" id="f1-last-name">
-        </div>
-        <div class="form-group col-md-3">
-            <label class="sr-only" for="f1-last-name">Last name</label>
-            <input type="text" name="f1-last-name" placeholder="" class="f1-last-name form-control" id="f1-last-name">
-        </div>
-    </div>
-    <div class="f1-buttons">
-        <button type="button" class="btn btn-circle orange btn-sm btn-next">Next</button>
-    </div>
-</fieldset>
-
-
-
-</form>
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
-
-
 
 </div>
 
@@ -842,6 +655,10 @@
     jQuery(document).ready(function () {
         Layout.init();
     });
+
+
+   
+
 
     $(function () {
         $("#map").googleMap({
