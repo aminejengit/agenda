@@ -14,7 +14,9 @@ app.service("dataService", function () {
         { picture: "assets/onepage2/img/avatar/5.png", name: 'DR. Jacqueline DUPONT', spec: "radiologie", location: "Vex / Va is" }
     ];
 
-
+   this.isconnected=function(username,password){
+       return username == "user" && password == "user";
+   }
 
 
     this.doctorFilterDoctorsForDoctorFiled = function () {

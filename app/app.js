@@ -65,17 +65,19 @@ app.controller("myCtrl", function ($scope, dataService) {
     $scope.connectionError = false;
     $scope.isconnected = false;
     $scope.connect = function () {
-
-        if (self.username == "user" && self.password == "user") {
+        if (dataService.isconnected(self.username,self.password)) {
             $scope.isconnected = true;
-             $scope.connectionError = false;
-        }else{
+            $scope.connectionError = false;
+            if ($scope.introSection == "profile") {
+                $scope.introSection = "schedule";
+            }
+        } else {
             $scope.connectionError = true;
         }
     }
     $scope.schedule = function () {
         if (!$scope.isconnected) {
-            $('#responsive').modal('show'); 
+            $('#responsive').modal('show');
         } else {
             $scope.introSection = "schedule";
         }
