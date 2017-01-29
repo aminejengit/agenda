@@ -56,7 +56,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
     <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.4.0.js"></script>
     <script src="example.js"></script>
-   
+
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -100,10 +100,18 @@
 
 
                                     <script type="text/ng-template" id="doctorTemplate.html">
-  <a>
-      <img ng-src="{{match.model.picture}}" width="16">
-      <span ng-bind-html="match.label | uibTypeaheadHighlight:query"></span>
-  </a>
+
+  <div class="autocomplete-result col-md-12 tt-suggestion tt-selectable"> 
+      <div class=" col-md-2 no-padding"><img src="{{match.model.picture}}"></div>
+   <div class="autocomplete-text col-md-8"> 
+       <span class="autocomplete-name"  ng-bind-html="match.label.split(' ')[0]+' '+match.label.split(' ')[1] | uibTypeaheadHighlight:query">  </span>
+       <span class="autocomplete-name"  ng-bind-html="match.label.split(' ')[2] | uibTypeaheadHighlight:query">  </span>
+       <span class="autocomplete-speciality"> <strong class="tt-highlight"> {{match.model.spec}} </strong> </span>
+    </div> 
+</div>
+
+
+  
 </script>
 
 <input type="text" ng-model="selectedDoc" ng-change="selectDoctor" placeholder="Médecin ou Centre ou Clinique" uib-typeahead="doctor as doctor.name for doctor in doctorList | filter:{name:$viewValue}"
@@ -184,7 +192,7 @@
 
 <div id="SearchContentPanel" class="col-md-8">
     <div ng-include="'/includes/index-schedule.html'" ng-if="introSection == 'schedule'">
-    
+
     </div>
     <div id="carousel-example-generic" class="carousel slide carousel-fade" ng-if="introSection == 'slider'">
         <!-- Indicators -->
@@ -657,7 +665,7 @@
     });
 
 
-   
+
 
 
     $(function () {
