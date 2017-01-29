@@ -7,31 +7,31 @@ app.service("dataService", function () {
     self.selectedlocal = undefinedQuerry;
 
     this.mockedDoctors = [
-        { picture: "assets/onepage2/img/avatar/1.png", name: 'DR. Ben THOMPSON', spec: "Cardiologie", location: "Onex / Genève" },
-        { picture: "assets/onepage2/img/avatar/2.png", name: 'DR. Monique DUNANT', spec: "Gynécologie", location: " ncy / Genève" },
-        { picture: "assets/onepage2/img/avatar/3.png", name: 'R. Jean FAVRE', spec: "Pédiatrie", location: "Nyon / Vaud" },
-        { picture: "assets/onepage2/img/avatar/4.png", name: 'DR. Denis CHEVRELEY', spec: "Néonatologie", location: "Avry / Fribourg" },
-        { picture: "assets/onepage2/img/avatar/5.png", name: 'DR. Jacqueline DUPONT', spec: "Radiologie", location: "Vex / Va is" },
-        { picture: "assets/onepage2/img/avatar/1.png", name: 'DR. Ben THOMPSON', spec: "Cardiologie", location: "Onex / Genève" },
-        { picture: "assets/onepage2/img/avatar/2.png", name: 'DR. Monique DUNANT', spec: "Gynécologie", location: " ncy / Genève" },
-        { picture: "assets/onepage2/img/avatar/3.png", name: 'R. Jean FAVRE', spec: "Pédiatrie", location: "Nyon / Vaud" },
-        { picture: "assets/onepage2/img/avatar/4.png", name: 'DR. Denis CHEVRELEY', spec: "Néonatologie", location: "Avry / Fribourg" },
-        { picture: "assets/onepage2/img/avatar/5.png", name: 'DR. Jacqueline DUPONT', spec: "Radiologie", location: "Vex / Va is" },
-        { picture: "assets/onepage2/img/avatar/1.png", name: 'DR. Ben THOMPSON', spec: "Cardiologie", location: "Onex / Genève" },
-        { picture: "assets/onepage2/img/avatar/2.png", name: 'DR. Monique DUNANT', spec: "Gynécologie", location: " ncy / Genève" },
-        { picture: "assets/onepage2/img/avatar/3.png", name: 'R. Jean FAVRE', spec: "Pédiatrie", location: "Nyon / Vaud" },
-        { picture: "assets/onepage2/img/avatar/4.png", name: 'DR. Denis CHEVRELEY', spec: "Néonatologie", location: "Avry / Fribourg" },
-        { picture: "assets/onepage2/img/avatar/5.png", name: 'DR. Jacqueline DUPONT', spec: "Radiologie", location: "Vex / Va is" },
-        { picture: "assets/onepage2/img/avatar/1.png", name: 'DR. Ben THOMPSON', spec: "Cardiologie", location: "Onex / Genève" },
-        { picture: "assets/onepage2/img/avatar/2.png", name: 'DR. Monique DUNANT', spec: "Gynécologie", location: " ncy / Genève" },
-        { picture: "assets/onepage2/img/avatar/3.png", name: 'R. Jean FAVRE', spec: "Pédiatrie", location: "Nyon / Vaud" },
-        { picture: "assets/onepage2/img/avatar/4.png", name: 'DR. Denis CHEVRELEY', spec: "Néonatologie", location: "Avry / Fribourg" },
-        { picture: "assets/onepage2/img/avatar/5.png", name: 'DR. Jacqueline DUPONT', spec: "Radiologie", location: "Vex / Va is" },
+        { picture: "assets/onepage2/img/avatar/1.png", name: 'DR. Ben THOMPSON', spec: "Cardiologie", location: "Onex / Genève", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/2.png", name: 'DR. Monique DUNANT', spec: "Gynécologie", location: " ncy / Genève", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/3.png", name: 'R. Jean FAVRE', spec: "Pédiatrie", location: "Nyon / Vaud", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/4.png", name: 'DR. Denis CHEVRELEY', spec: "Néonatologie", location: "Avry / Fribourg", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/5.png", name: 'DR. Jacqueline DUPONT', spec: "Radiologie", location: "Vex / Va is", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/1.png", name: 'DR. Ben THOMPSON', spec: "Cardiologie", location: "Onex / Genève", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/2.png", name: 'DR. Monique DUNANT', spec: "Gynécologie", location: " ncy / Genève", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/3.png", name: 'R. Jean FAVRE', spec: "Pédiatrie", location: "Nyon / Vaud", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/4.png", name: 'DR. Denis CHEVRELEY', spec: "Néonatologie", location: "Avry / Fribourg", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/5.png", name: 'DR. Jacqueline DUPONT', spec: "Radiologie", location: "Vex / Va is", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/1.png", name: 'DR. Ben THOMPSON', spec: "Cardiologie", location: "Onex / Genève", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/2.png", name: 'DR. Monique DUNANT', spec: "Gynécologie", location: " ncy / Genève", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/3.png", name: 'R. Jean FAVRE', spec: "Pédiatrie", location: "Nyon / Vaud", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/4.png", name: 'DR. Denis CHEVRELEY', spec: "Néonatologie", location: "Avry / Fribourg", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/5.png", name: 'DR. Jacqueline DUPONT', spec: "Radiologie", location: "Vex / Va is", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/1.png", name: 'DR. Ben THOMPSON', spec: "Cardiologie", location: "Onex / Genève", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/2.png", name: 'DR. Monique DUNANT', spec: "Gynécologie", location: " ncy / Genève", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/3.png", name: 'R. Jean FAVRE', spec: "Pédiatrie", location: "Nyon / Vaud", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/4.png", name: 'DR. Denis CHEVRELEY', spec: "Néonatologie", location: "Avry / Fribourg", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
+        { picture: "assets/onepage2/img/avatar/5.png", name: 'DR. Jacqueline DUPONT', spec: "Radiologie", location: "Vex / Va is", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] }
     ];
 
-   this.isconnected=function(username,password){
-       return username == "user" && password == "user";
-   }
+    this.isconnected = function (username, password) {
+        return username == "user" && password == "user";
+    }
 
 
     this.doctorFilterDoctorsForDoctorFiled = function () {

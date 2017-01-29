@@ -3336,12 +3336,28 @@ a.btn.btn-circle.btn-sm.orange.form-submit-btn.inscrire-form-btn {
 }
 .available-slot-item{
     background: #428bca;
+    cursor:pointer;
     color: #fff;
         margin-bottom: 20px;
     padding: 6px;
     display: block;
     text-align: center;
     border-radius: 5px;
+   
+}
+.available-slot-item:hover{
+  background:#7ea7ca;
+}
+.not-available-slot-item{
+    background:#cecece;
+    cursor:default;
+    color: #fff;
+        margin-bottom: 20px;
+    padding: 6px;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+
 }
 .available-slot{
         float: left;
