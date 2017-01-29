@@ -7,6 +7,7 @@ app.controller("myCtrl", function ($scope, dataService) {
     $scope.introSection = "slider";
     $scope.showSlider = function () {
         $scope.introSection = "slider";
+        $scope.selectedDoc = undefined
     }
 
     $scope.onSelect = function ($item, $model, $label) {
@@ -23,8 +24,7 @@ app.controller("myCtrl", function ($scope, dataService) {
     $scope.showResultsForDoctor = function () {
         if ($scope.selectedDoc != null) {
             dataService.selecteddoctorName = $scope.selectedDoc.name;
-            $scope.doctors = dataService.doctorFilterDoctorsForDoctorFiled();
-            $scope.introSection = "result";
+            $scope.showProfile($scope.selectedDoc);
         } else {
             dataService.selecteddoctorName = dataService.undefinedQuerry;
         }
@@ -46,6 +46,7 @@ app.controller("myCtrl", function ($scope, dataService) {
         if ($scope.selectedDoc != null || $scope.selectedLocal != null) {
             $scope.doctors = dataService.getfilterdoctorsForSearch();
             $scope.introSection = "result";
+            $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.showError = false;
         } else {
             $scope.showError = true;
@@ -59,7 +60,7 @@ app.controller("myCtrl", function ($scope, dataService) {
         $scope.introSection = "profile";
     }
     $scope.closeProfile = function () {
-        $scope.introSection = "result";
+        $scope.showSlider();
     }
     // connection 
     $scope.connectionError = false;

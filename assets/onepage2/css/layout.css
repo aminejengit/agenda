@@ -3392,3 +3392,9 @@ a.btn.btn-circle.btn-sm.orange.form-submit-btn.inscrire-form-btn {
     font-size: 30px; }
   .carousel .carousel-subtitle-v1 {
     font-size: 18px; } }
+
+  .dropdown-menu {
+            max-height: 470px;
+            overflow-y: auto;
+            width:100%
+        }
