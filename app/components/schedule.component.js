@@ -1,8 +1,9 @@
 app.component('scheduler', {
     bindings: {
-        excludeddates: '<',
-        callback: '&'
+        selecttime : '&',
+        excludeddates: '='
     },
+    require: '^myCtrl',
 
     transclude: true,
     controller: function MyTabsController() {
@@ -21,8 +22,8 @@ app.component('scheduler', {
             minDate: new Date(),
         };
 
-        this.callback = function () {
-            alert('jen');
+        self.selectTime = function (time) {
+            self.selecttime({selected:{date:self.customDate,time:time}});
         }
         self.getTimesByDate = function (dateParam) {
             var dates = self.excludeddates;
@@ -32,24 +33,21 @@ app.component('scheduler', {
                 }
             }
         }
-
-        this.jen = "autocomplete-component";
-
-        this.times = [];
-        this.constructTimes = function (start, end, describer) {
-            var customDate;
+        self.times = [];
+        self.customDate="";
+        self.constructTimes = function (start, end, describer) {
             var day;
             if (self.dt == undefined) {
                 self.dt = new Date();
             }
             if (self.dt != undefined) {
                 var date = this.dt;
-                customDate = date.toISOString().slice(0,10);
+                self.customDate = date.toISOString().slice(0,10);
             }
             var timesTable = [];
             var timeVar = "";
             var mins = ["00", "15", "30", "45"];
-            var excludedTimes = self.getTimesByDate(customDate);
+            var excludedTimes = self.getTimesByDate(self.customDate);
            
             var clickable = "";
             for (hour = start; hour <= end; hour++) {
@@ -69,7 +67,7 @@ app.component('scheduler', {
         }
         self.constructTimes(7, 9, 'AM');
 
-        this.getTimes = function (start, end, describer) {
+        self.getTimes = function (start, end, describer) {
             return this.times;
         }
     },

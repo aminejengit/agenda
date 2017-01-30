@@ -5,6 +5,8 @@ app.service("dataService", function () {
     self.selecteddoctorName = undefinedQuerry;
     self.selectedspec = undefinedQuerry;
     self.selectedlocal = undefinedQuerry;
+    self.username="";
+    self.password="";
 
     this.mockedDoctors = [
         { picture: "assets/onepage2/img/avatar/1.png", name: 'DR. Ben THOMPSON', spec: "Cardiologie", location: "Onex / Genève", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] },
@@ -29,8 +31,9 @@ app.service("dataService", function () {
         { picture: "assets/onepage2/img/avatar/5.png", name: 'DR. Jacqueline DUPONT', spec: "Radiologie", location: "Vex / Va is", excludedDates: [{ date: '2017-02-03', excludedTimes: ["07:00AM", "07:30AM"] }] }
     ];
 
-    this.isconnected = function (username, password) {
-        return username == "user" && password == "user";
+    this.isconnected = function () {
+        console.log(self.username+self.password)
+        return self.username == "user" && self.password == "user";
     }
 
 

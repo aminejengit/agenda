@@ -66,6 +66,9 @@ app.controller("myCtrl", function ($scope, dataService) {
     $scope.connectionError = false;
     $scope.isconnected = false;
     $scope.connect = function () {
+        dataService.username=self.username;
+        dataService.password=self.password;
+        console.log(dataService.username+dataService.password)
         if (dataService.isconnected(self.username,self.password)) {
             $scope.isconnected = true;
             $scope.connectionError = false;
@@ -76,8 +79,10 @@ app.controller("myCtrl", function ($scope, dataService) {
             $scope.connectionError = true;
         }
     }
-    $scope.schedule = function () {
-        if (!$scope.isconnected) {
+
+
+    $scope.getSeleectedDate = function (time){
+         if (!$scope.isconnected) {
             $('#responsive').modal('show');
         } else {
             $scope.introSection = "schedule";

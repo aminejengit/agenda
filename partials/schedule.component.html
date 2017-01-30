@@ -6,11 +6,11 @@
       
             <br/>
       
-            <div class="col-md-2" ng-click="$ctrl.callback();" ng-repeat="time in $ctrl.times">
+            <div class="col-md-2" ng-click="$ctrl.selectTime(time.time)" ng-repeat="time in $ctrl.times">
                 <span ng-class="{'available-slot-item' : time.isClickable,
                                                                           'not-available-slot-item' : !time.isClickable  }"> {{time.time}} </span>
             </div>
             
-
+ 
  
     </div>
