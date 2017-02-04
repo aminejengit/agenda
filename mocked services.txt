@@ -1,0 +1,19 @@
+http://www.mocky.io/v2/5892557f0f000050069656cc
+[
+    { "id": "1", "type": "doctor", "picture": "assets/onepage2/img/avatar/1.png", "name": "DR. Ben THOMPSON", "spec": "Cardiologie", "location": "Onex / Genève","availability": [{ "date": "2017-02-05", "availableTimes": ["07:00AM", "07:30AM"] }] },
+    { "id": "2", "type": "doctor", "picture": "assets/onepage2/img/avatar/2.png", "name": "DR. Monique DUNANT", "spec": "Gynécologie", "location": " ncy / Genève","availability": [{ "date": "2017-02-05", "availableTimes": ["07:00AM", "07:30AM"] }] },
+    { "id": "3", "type": "doctor", "picture": "assets/onepage2/img/avatar/3.png", "name": "R. Jean FAVRE", "spec": "Pédiatrie", "location": "Nyon / Vaud" ,"availability": [{ "date": "2017-02-05", "availableTimes": ["07:00AM", "07:30AM"] }] },
+    { "id": "4", "type": "doctor", "picture": "assets/onepage2/img/avatar/4.png", "name": "DR. Denis CHEVRELEY", "spec": "Néonatologie", "location": "Avry / Fribourg","availability": [{ "date": "2017-02-05", "availableTimes": ["07:00AM", "07:30AM"] }]  },
+    { "id": "5", "type": "doctor", "picture": "assets/onepage2/img/avatar/5.png", "name": "DR. Jacqueline DUPONT", "spec": "Radiologie", "location": "Vex / Va is" ,"availability": [{ "date": "2017-02-05", "availableTimes": ["07:00AM", "07:30AM"] }]  },
+    { "id": "6", "type": "doctor", "picture": "assets/onepage2/img/avatar/1.png", "name": "DR. Ben THOMPSON", "spec": "Cardiologie", "location": "Onex / Genève" ,"availability": [{ "date": "2017-02-05", "availableTimes": ["07:00AM", "07:30AM"] }]  },
+    { "id": "7", "type": "center", "picture": "assets/onepage2/img/avatar/1.png", "name": "center 1", "spec": "Cardiologie", "location": "Onex / Genève" ,"availability": [{ "date": "2017-02-05", "availableTimes": ["07:00AM", "07:30AM"] }]  },
+    { "id": "8", "type": "center", "picture": "assets/onepage2/img/avatar/1.png", "name": "center2", "spec": "Cardiologie", "location": "Onex / Genève","availability": [{ "date": "2017-02-05", "availableTimes": ["07:00AM", "07:30AM"] }]  }
+]
+http://www.mocky.io/v2/589259a30f0000a8069656d2
+["Cardiologie","Gynécologie","Pédiatrie","Néonatologie","Radiologie","Cardiologie"]
+
+
+http://www.mocky.io/v2/5892e0ec0f00000515965753
+{ id: "1", type: "doctor", picture: "assets/onepage2/img/avatar/1.png", name: "DR. Ben THOMPSON", spec: "Cardiologie", location: "Onex / Genève" }
+
+Access-Control-Allow-Origin * 

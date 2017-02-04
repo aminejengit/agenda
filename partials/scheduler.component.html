@@ -1,0 +1,11 @@
+<div class="row">
+    <div ng-click="self.constructTimes();" id="paginator"></div>
+    <!--<div uib-datepicker ng-change="$ctrl.constructTimes(7,9,'AM')" ng-model="$ctrl.dt" class="well well-sm" datepicker-options="$ctrl.datePickerPptions"></div>
+    </div>-->
+
+    <br/>
+
+    <div class="col-md-2" ng-click="$ctrl.onSelectTime(time)" ng-repeat="time in $ctrl.times">
+        <span ng-class="{'available-slot-item' : time.isClickable,'not-available-slot-item' : !time.isClickable  }"> {{time.time}} </span>
+    </div>
+</div>

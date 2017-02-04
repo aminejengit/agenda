@@ -1,0 +1,127 @@
+<section id="intro">
+    <br/>
+
+
+    <div class="container primary-section-container" ng-disabled="$ctrl.introSection != 'profile'">
+
+
+        <div class="col-md-4">
+            <div class="portlet searchForm">
+                <div class="portlet-title">
+                    <div class="caption custom-title">
+                        Prenons rendez-vous</div>
+
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+
+                    <div class="form-horizontal">
+                        <div class="form-body">
+                            <div class="form-group medecin">
+
+                                <div class="col-md-12">
+
+                                    <!-- <input ng-change="onvalueChangeDoctorCenter();" ng-model="doctorOrCenter" type="text" class="form-control input-circle typeahead" placeholder="Médecin ou Centre ou Clinique"> -->
+
+
+                                    <script type="text/ng-template" id="doctorTemplate.html">
+
+  <div ng-link="['Profile',{id:match.model.id}]" class="autocomplete-result col-md-12 tt-suggestion tt-selectable"> 
+      <div class=" col-md-2 no-padding"><img src="{{match.model.picture}}"></div>
+   <div  class="autocomplete-text col-md-8"> 
+       <span class="autocomplete-name"  ng-bind-html="match.label.split(' ')[0]+' '+match.label.split(' ')[1] | uibTypeaheadHighlight:query">  </span>
+       <span class="autocomplete-name"  ng-bind-html="match.label.split(' ')[2] | uibTypeaheadHighlight:query">  </span>
+       <span class="autocomplete-speciality"> <strong class="tt-highlight"> {{match.model.spec}} </strong> </span>
+    </div> 
+</div>
+
+
+  
+</script>
+
+<input type="text" ng-model="$ctrl.querryDoctorOrCenter" ng-change="$ctrl.getDoctorsByQuerry()" placeholder="Médecin ou Centre ou Clinique"
+    uib-typeahead="doctor as doctor.name for doctor in $ctrl.doctorAndCenterResult | filter:{name:$viewValue}" typeahead-template-url="doctorTemplate.html"
+    class="form-control" typeahead-show-hint="true" typeahead-min-length="1" typeahead-on-select="onSelect($item, $model, $label)">
+
+</div>
+</div>
+
+<div class="ouSeparator">
+    <span>
+                                            OU
+                                        </span>
+</div>
+
+
+
+<div class="form-group specialite">
+
+    <div id="specialite" class="col-md-12">
+
+
+
+        <input type="text" typeahead-on-select="onSelectForSearch($item, $model, $label)" ng-model="$ctrl.selectedSpec" placeholder="Spécialité"
+            uib-typeahead="spec for spec in $ctrl.allSpecs | filter:$viewValue | limitTo:8" class="form-control">
+
+    </div>
+</div>
+<div class="form-group adresse">
+
+    <div class="col-md-12">
+
+        <input type="text" ng-change="$ctrl.getLocationsByQuerry()" typeahead-on-select="onSelectForSearch($item, $model, $label)"
+            ng-model="$ctrl.selectedLocal" placeholder="Canton ou commune ou adresse" uib-typeahead="location as location.formatted_address for location in $ctrl.returnedLocations "
+            class="form-control">
+        <span ng-if="$ctrl.showError" style="color: red"> Veuillez saisir un canton une commune ou une adresse</span>
+<a href="javascript:;" class="geolocalisation"></a>
+</div>
+</div>
+<div class="form-group dateHeure">
+
+    <div class="col-md-12">
+        <div class="input-group date form_datetime">
+            <input ng-model="$ctrl.date" ng-change="$ctrl.seletDate()" type="text" size="16" id="datetimepicker" class="form-control " placeholder="Date et heure">
+            <span class="input-group-btn input-circle">
+                                                    <button class="btn default date-set" type="button">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </button>
+                                                </span>
+        </div>
+    </div>
+</div>
+
+<div class="form-group last">
+
+    <div class="col-md-12">
+        <select ng-model="selectedLanguage" class="bs-select form-control input-circle" data-live-search="true" data-size="8">
+                                                <option value="FR">Français</option>
+                                                <option value="EN">English</option>                                                
+                                            </select>
+
+    </div>
+</div>
+</div>
+<div class="form-actions">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-9">
+            <a ng-click="$ctrl.showResult();" class="btn btn-circle btn-sm orange form-submit-btn"><i class="fa fa-search"></i> Chercher
+                                            </a>
+        </div>
+    </div>
+</div>
+</div>
+<!-- END FORM-->
+</div>
+</div>
+</div>
+
+
+<div id="SearchContentPanel" class="col-md-8">
+    <ng-outlet></ng-outlet>
+</div>
+</div>
+
+</div>
+<div id="map">
+</div>
+</section>
