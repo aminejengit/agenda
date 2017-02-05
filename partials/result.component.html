@@ -1,0 +1,52 @@
+<div class="portlet ligh pre-scrollable" style="max-height: 420px">
+
+<div class="portlet-title">
+    <div class="caption caption-md">
+        <i class="icon-bar-chart theme-font hide"></i>
+        <span class="caption-subject font-black ">Résultat : </span>
+        <span class="caption-helper">100</span>
+        <span class="caption-helper sub">médecins</span>
+    </div>
+    <div   ng-link="['Slider']" class="actions">
+        <div class="btn-group btn-group-devided" data-toggle="buttons">
+            <button  type="button" data-show="carousel-example-generic" class="btn white btn-sm close-popUp-btn"></button>
+        </div>
+    </div>
+</div>
+<div class="portlet-body ">
+
+
+
+    <table class="table table-hover table-light">
+        <thead>
+            <tr>
+
+                <th colspan="2"> Nom Prénom </th>
+                <th> Spécialité </th>
+                <th> Localité / Canton </th>
+                <th> </th>
+            </tr>
+        </thead>
+        <div class="table-scrollable table-scrollable-borderless scrollableResult">
+            <tr class="cd-section" ng-repeat="doctor in $ctrl.doctors">
+                <td class="fit">
+                    <img class="user-pic" src="{{doctor.picture}}">
+                </td>
+                <td>
+                    <a <a href="#!/profile/{{doctor.id}}" class="primary-link">{{doctor.name}}</a>
+                </td>
+
+                <td> {{doctor.spec}} </td>
+                <td> {{doctor.location}} </td>
+                <td>
+                    <a href="#!/profile/{{doctor.id}}" class="btn-consult-detail">
+                    </a>
+
+                </td>
+
+            </tr>
+        </div>
+    </table>
+</div>
+
+</div>
