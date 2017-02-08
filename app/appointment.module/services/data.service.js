@@ -92,5 +92,12 @@ angular
             return ( $cookies.get("user") == "user" && $cookies.get("password") == "user");
         }
 
+        $service.signUp = function(signupFields){
+            console.log('sign up with fields : '+signupFields)
+        }
+        $service.verifyCode = function(code){
+            return code == "1122";
+        }
+
  
     });
