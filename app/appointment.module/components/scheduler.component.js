@@ -30,7 +30,8 @@ angular
                 if (time.isClickable) {
                     if (dataService.isConnected()) {
                         $ctrl.selecttime({ selected: { date: $ctrl.customDate, time: time.time } });
-                        window.location.href = "/#!/appointment";
+                        $('#schedulerDetails').modal('show');
+                        
                     } else {
                         dataService.redirectToAppointment = true;    
                         console.log($ctrl.$router)

@@ -9,3 +9,67 @@
         <span ng-class="{'available-slot-item' : time.isClickable,'not-available-slot-item' : !time.isClickable  }"> {{time.time}} </span>
     </div>
 </div>
+
+<div id="schedulerDetails" class="modal fade login-popUp settingsModal" style="border-radius: 0;" tabindex="-1" data-width="760">
+    <div class="modal-header" style="border: none">
+        <h4 style="padding-left: 15px;font-size: 24px;display: inline-block;">Rendez-vous details</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12 login-form">
+                <div class="inscription-form">
+
+                    <div class="portlet searchForm">
+
+                        <div class="portlet-body form">
+                            <!-- BEGIN FORM-->
+                            <form action="#" class="form-horizontal">
+                                <div class="form-body">
+                                    <div class="form-group" style="margin-bottom: 17px;">
+                                        <label>Selectionner une motif</label>
+                                        <div class="col-md-12">
+
+                                            <select  class="bs-select form-control input-circle ng-pristine ng-valid ng-empty ng-touched" data-live-search="true" data-size="8"><option value="Selectionner une motif" selected="selected"></option>
+                                                <option value="motif 1">motif 1</option>
+                                                <option value="motif 2">motif 2</option>                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="margin-bottom: 17px;">
+                                        <label>Selectionner un proche</label>
+                                        <div class="col-md-12">
+                                            <select  class="bs-select form-control input-circle ng-pristine ng-valid ng-empty ng-touched" data-live-search="true" data-size="8"><option value="Selectionner un proche" selected="selected"></option>
+                                                <option value="proche 1">proche 1</option>
+                                                <option value="proche 2">proche 2</option>                                                
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            <a class="btn btn-circle orange btn-sm form-submit-btn connect-btn-form customBTN" data-hide="schedulerDetails" 
+                                               data-toggle="modal"> Confirmer
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- END FORM-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>

@@ -79,7 +79,7 @@ angular
             $cookies.put("user", user, []); // FIXME cript the cookies on the server and set them in the browser as a connection string
             $cookies.put("password", password, []);
             if ($service.redirectToAppointment && $service.isConnected()) {
-                window.location.href = "/#!/appointment";
+                $('#schedulerDetails').modal('show');
             }
         }
 

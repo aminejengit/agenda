@@ -79,8 +79,31 @@
 
                     <li class="page-scroll">
                         <a ng-if="!$ctrl.isConnected()" class="btn btn-circle orange btn-sm" data-target="#responsive" data-toggle="modal"> Se connecter </a>
-                        <a ng-if="$ctrl.isConnected()" ng-click="$ctrl.deDonnect();" class="btn btn-circle orange btn-sm"> Se déconnecter </a>
+                        <div class="col-md-3">
 
+                            <img <div ng-if="$ctrl.isConnected()" src="/img/member/Bas-Avatar-Big-Rounded-Corn.png" height="50px">
+                        </div>
+                        <div class="col-md-6">
+                            <div ng-if="$ctrl.isConnected()" class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="true">
+                                    Nick Jhonson
+                                    <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li ><a>Mon Profile</a></li>
+                                        <li ><a>Mes médecins</a></li>
+                                        <li ><a>Mez rendez-vous</a></li>
+                                        <li ><a>Mez parrainages</a></li>
+                                        <li ><a>Mez proches</a></li>
+
+
+                                        <li role="separator" class="divider"></li>
+                                        <li ng-click="$ctrl.deDonnect();"><a>Se déconnecter</a></li>
+
+                                    </ul>
+                            </div>
+                        </div>
                     </li>
 
                 </ul>
@@ -254,111 +277,111 @@
 
 <div id="step1" class="modal fade login-popUp settingsModal" style="border-radius: 0;" tabindex="-1" data-width="760">
     <div class="modal-header" style="border: none">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
 
-                </div>
+    </div>
     <div class="modal-body" style="padding: 0;">
-                    <div class="row">
-                        <div class="col-md-12 login-form">
-                             <div class="col-md-12 form-box">
-                                 <form role="form" action="" method="post" class="f1">
-                                      <div class="f1-steps">
-        <div class="f1-progress">
-            <div class="f1-progress-line" data-now-value="50" data-number-of-steps="2" style="width: 50%;"></div>
-        </div>
-        <div class="f1-step active">
-            <div class="f1-step-icon">1</div>
-        </div>
-        <div class="f1-step" style="float: right;text-align: right;">
-            <div class="f1-step-icon">2</div>
-        </div>
-        <div class="col-md-12 login-form">
-            <div class="col-md-12 form-box">
-                <div class="step-header">
-                    <h4>Bravo!</h4>
-                    <p>
-                        l'étape 1 de votre inscription à été réussi avec succès
-                        <span>
+        <div class="row">
+            <div class="col-md-12 login-form">
+                <div class="col-md-12 form-box">
+                    <form role="form" action="" method="post" class="f1">
+                        <div class="f1-steps">
+                            <div class="f1-progress">
+                                <div class="f1-progress-line" data-now-value="50" data-number-of-steps="2" style="width: 50%;"></div>
+                            </div>
+                            <div class="f1-step active">
+                                <div class="f1-step-icon">1</div>
+                            </div>
+                            <div class="f1-step" style="float: right;text-align: right;">
+                                <div class="f1-step-icon">2</div>
+                            </div>
+                            <div class="col-md-12 login-form">
+                                <div class="col-md-12 form-box">
+                                    <div class="step-header">
+                                        <h4>Bravo!</h4>
+                                        <p>
+                                            l'étape 1 de votre inscription à été réussi avec succès
+                                            <span>
                                                       Nous avons envoyé un code de validation à votre adresse e-mail
                                                       <strong>veuillez le saissir </strong>
                                                   </span>
-                    </p>
-                </div>
-                <div class="row">
-                    <div class="form-group col-md-3">
-                        <label class="sr-only" for="f1-first-name"></label>
-                        <input type="text" ng-model="$ctrl.key1" name="f1-first-name" maxlength="1" placeholder="" class="f1-first-name form-control"
-                            id="f1-first-name">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label class="sr-only" for="f1-last-name"></label>
-                        <input type="text" ng-model="$ctrl.key2" name="f1-last-name" maxlength="1" placeholder="" class="f1-last-name form-control"
-                            id="f1-last-name">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label class="sr-only" for="f1-last-name"></label>
-                        <input type="text" ng-model="$ctrl.key3" name="f1-last-name" maxlength="1" placeholder="" class="f1-last-name form-control"
-                            id="f1-last-name">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label class="sr-only" for="f1-last-name"></label>
-                        <input type="text" ng-model="$ctrl.key4" name="f1-last-name" maxlength="1" placeholder="" class="f1-last-name form-control"
-                            id="f1-last-name">
-                    </div>
-                </div>
-                <div class="f1-buttons">
+                                        </p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-3">
+                                            <label class="sr-only" for="f1-first-name"></label>
+                                            <input type="text" ng-model="$ctrl.key1" name="f1-first-name" maxlength="1" placeholder="" class="f1-first-name form-control"
+                                                id="f1-first-name">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label class="sr-only" for="f1-last-name"></label>
+                                            <input type="text" ng-model="$ctrl.key2" name="f1-last-name" maxlength="1" placeholder="" class="f1-last-name form-control"
+                                                id="f1-last-name">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label class="sr-only" for="f1-last-name"></label>
+                                            <input type="text" ng-model="$ctrl.key3" name="f1-last-name" maxlength="1" placeholder="" class="f1-last-name form-control"
+                                                id="f1-last-name">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label class="sr-only" for="f1-last-name"></label>
+                                            <input type="text" ng-model="$ctrl.key4" name="f1-last-name" maxlength="1" placeholder="" class="f1-last-name form-control"
+                                                id="f1-last-name">
+                                        </div>
+                                    </div>
+                                    <div class="f1-buttons">
 
-                    <button type="button" ng-click="$ctrl.validateCode()" class="btn btn-circle orange btn-sm btn-next">Next</button>
+                                        <button type="button" ng-click="$ctrl.validateCode()" class="btn btn-circle orange btn-sm btn-next">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-
-
     </div>
-                                 </form>
-                             </div>
-                        </div>
-                    </div>
-    </div>
-   
+
 </div>
 <div id="step2" class="modal fade login-popUp settingsModal" style="border-radius: 0;" tabindex="-1" data-width="760">
-   <div class="modal-header" style="border: none">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+    <div class="modal-header" style="border: none">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
 
-                </div>
+    </div>
     <div class="modal-body" style="padding: 0;">
-                    <div class="row">
-                        <div class="col-md-12 login-form">
-                             <div class="col-md-12 form-box">
-                                 <form role="form" action="" method="post" class="f1">
-                                      <div class="f1-steps">
-        <div class="f1-progress">
-            <div class="f1-progress-line" data-now-value="50" data-number-of-steps="2" style="width: 50%;"></div>
-        </div>
-        <div class="f1-step">
-            <div class="f1-step-icon">1</div>
-        </div>
-        <div class="f1-step active ">
-            <div class="f1-step-icon">2</div>
-        </div>
-        <div class="col-md-12 login-form">
-            <div class="col-md-12 form-box">
-                <div class="step-header">
-                    <h4>Bravo!</h4>
-                    <p> votre inscription est terminée merci de se connecter avec vos identifiants</p>
+        <div class="row">
+            <div class="col-md-12 login-form">
+                <div class="col-md-12 form-box">
+                    <form role="form" action="" method="post" class="f1">
+                        <div class="f1-steps">
+                            <div class="f1-progress">
+                                <div class="f1-progress-line" data-now-value="50" data-number-of-steps="2" style="width: 50%;"></div>
+                            </div>
+                            <div class="f1-step">
+                                <div class="f1-step-icon">1</div>
+                            </div>
+                            <div class="f1-step active ">
+                                <div class="f1-step-icon">2</div>
+                            </div>
+                            <div class="col-md-12 login-form">
+                                <div class="col-md-12 form-box">
+                                    <div class="step-header">
+                                        <h4>Bravo!</h4>
+                                        <p> votre inscription est terminée merci de se connecter avec vos identifiants</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
 
-    </div>
-                                 </form>
-                             </div>
-                        </div>
-                    </div>
-    </div>
-    
-   
 </div>
 </div>
