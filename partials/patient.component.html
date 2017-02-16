@@ -1,0 +1,369 @@
+ //FIXME
+<link href="assets/global/css/components-rounded.css" rel="stylesheet" id="style_components" type="text/css" />
+
+
+
+
+<div class="page-container">
+    <div class="page-content-wrapper">
+        <!-- BEGIN MAIN LAYOUT -->
+        <div class="page-content">
+            <section id="member">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN PROFILE SIDEBAR -->
+                            <div class="profile-sidebar">
+                                <!-- PORTLET MAIN -->
+                                <div class="portlet light profile-sidebar-portlet " style="padding: 20px !important;">
+<!-- SIDEBAR USERPIC -->
+<div class="profile-userpic">
+    <img src="assets/onepage2/img/avatar/profile_user.jpg" class="img-responsive" alt=""> </div>
+<!-- END SIDEBAR USERPIC -->
+<!-- SIDEBAR USER TITLE -->
+<div class="profile-usertitle">
+    <div class="profile-usertitle-name"> Marcus Doe </div>
+
+</div>
+
+<div class="profile-usermenu">
+    <ul class="nav">
+        <li>
+            <!--class="active"-->
+            <a href="#!/patient">
+                                                    Mon profile </a>
+        </li>
+        <li>
+            <!--class="active"-->
+            <a href="medecins.html">
+                                                    Mes médecins </a>
+        </li>
+        <li>
+            <a href="rendez-vous.html">
+                                                   Mes rendez-vous </a>
+        </li>
+        <li>
+            <a href="parrainages.html">
+                                                   Mes parrainages </a>
+        </li>
+        <li>
+            <a href="proches.html">
+                                                   Mes proches </a>
+        </li>
+    </ul>
+</div>
+<!-- END MENU -->
+</div>
+
+</div>
+<!-- END BEGIN PROFILE SIDEBAR -->
+<!-- BEGIN PROFILE CONTENT -->
+<div class="profile-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light ">
+                <ng-outlet></ng-outlet>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END PROFILE CONTENT -->
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+<section id="contact" style="background: #3d95cc;">
+<div class="container" style="background-color: #f4f5f9;height: 80px;box-shadow: 0px 10px 5px rgba(51, 51, 51, 0.17);margin-bottom: 24px;">
+</div>
+
+<!-- Footer Coypright -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="heading-left-light">
+                    <h2><img src="assets/onepage2/img/logo-footer.png" /></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. </p>
+                </div>
+            </div>
+            <div class="col-sm-6">
+
+            </div>
+        </div>
+        <!-- //end row -->
+    </div>
+</div>
+<!-- End Footer Coypright -->
+</section>
+<!-- END CONTACT SECTION -->
+<div id="responsive" class="modal fade login-popUp" style="border-radius: 0;" tabindex="-1" data-width="760">
+<div class="modal-header" style="border: none">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-6 login-form">
+            <div class="">
+                <h4 style="padding-left: 15px;font-size: 24px;">Se connecter</h4>
+<div class="portlet searchForm">
+
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        <form action="#" class="form-horizontal">
+            <div class="form-body">
+                <div class="form-group" style="margin-bottom: 17px;">
+
+<div class="col-md-12">
+    <input type="text" class="form-control input-circle" placeholder="Nom Prénom">
+
+</div>
+</div>
+<div class="form-group" style="margin-bottom: 17px;">
+
+<div class="col-md-12">
+    <input type="password" class="form-control input-circle" placeholder="********">
+
+</div>
+</div>
+
+</div>
+<div class="form-actions">
+    <div class="row">
+        <div class="col-md-12">
+            <a href="javascript:;" onclick="" class="btn btn-circle btn-sm orange form-submit-btn connect-btn-form"> Connecter
+</a>
+</div>
+</div>
+</div>
+</form>
+<!-- END FORM-->
+</div>
+</div>
+</div>
+
+</div>
+<div class="col-md-6 inscrire-form">
+    <div class="">
+        <h4 style="font-size: 24px;" >S'inscrire</h4>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus tortor ex, </p>
+
+<p>
+    <a class="btn btn-circle orange btn-sm form-submit-btn inscrire-form-btn customBTN" data-hide="responsive" data-target="#inscription"
+        data-toggle="modal"> inscrire
+                                    </a>
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="inscription" class="modal fade login-popUp settingsModal" style="border-radius: 0;" tabindex="-1" data-width="760">
+<div class="modal-header" style="border: none">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12 login-form">
+            <div class="">
+                <h4 style="padding-left: 15px;font-size: 24px;">Inscription</h4>
+<div class="portlet searchForm">
+
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        <form action="#" class="form-horizontal">
+            <div class="form-body">
+                <div class="form-group" style="margin-bottom: 17px;">
+
+<div class="col-md-12">
+    <input type="text" class="form-control input-circle" placeholder="Nom Prénom">
+
+</div>
+</div>
+<div class="form-group" style="margin-bottom: 17px;">
+
+<div class="col-md-12">
+    <input type="text" class="form-control input-circle" placeholder="E-mail">
+
+</div>
+</div>
+<div class="form-group" style="margin-bottom: 17px;">
+
+<div class="col-md-12">
+    <input type="text" class="form-control input-circle" placeholder="Mobile">
+
+</div>
+</div>
+<div class="form-group" style="margin-bottom: 17px;">
+
+<div class="col-md-12">
+    <input type="password" class="form-control input-circle" placeholder="Mot de passe">
+
+</div>
+</div>
+<div class="form-group" style="margin-bottom: 17px;">
+
+<div class="col-md-12">
+    <input type="password" class="form-control input-circle" placeholder="Confirmer mot de passe">
+
+</div>
+</div>
+
+</div>
+<div class="form-actions">
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-circle orange btn-sm form-submit-btn connect-btn-form customBTN" data-hide="inscription" data-target="#step"
+                data-toggle="modal"> S'inscrire
+                                                        </a>
+
+        </div>
+    </div>
+</div>
+</form>
+<!-- END FORM-->
+</div>
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+<div id="step" class="modal fade login-popUp settingsModal" style="border-radius: 0;" tabindex="-1" data-width="760">
+<div class="modal-header" style="border: none">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+
+</div>
+<div class="modal-body" style="padding: 0;">
+<div class="row">
+    <div class="col-md-12 login-form">
+        <div class="col-md-12 form-box">
+            <form role="form" action="" method="post" class="f1">
+                <div class="f1-steps">
+                    <div class="f1-progress">
+                        <div class="f1-progress-line" data-now-value="50" data-number-of-steps="2" style="width: 50%;"></div>
+</div>
+<div class="f1-step active">
+    <div class="f1-step-icon">1</div>
+</div>
+<div class="f1-step" style="float: right;text-align: right;">
+<div class="f1-step-icon">2</div>
+</div>
+
+</div>
+
+
+
+<fieldset>
+    <div class="step-header">
+        <h4>Bravo!</h4>
+        <p>
+            l'étape 1 de cotre inscription à été réussi avec succès
+            <span>
+                                                      Nous avons envoyé un code de validation à votre adresse e-mail
+                                                      <strong>veuillez le saissir </strong>
+                                                  </span>
+        </p>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-3">
+            <label class="sr-only" for="f1-first-name">First name</label>
+            <input type="text" name="f1-first-name" placeholder="" class="f1-first-name form-control" id="f1-first-name">
+        </div>
+        <div class="form-group col-md-3">
+            <label class="sr-only" for="f1-last-name">Last name</label>
+            <input type="text" name="f1-last-name" placeholder="" class="f1-last-name form-control" id="f1-last-name">
+        </div>
+        <div class="form-group col-md-3">
+            <label class="sr-only" for="f1-last-name">Last name</label>
+            <input type="text" name="f1-last-name" placeholder="" class="f1-last-name form-control" id="f1-last-name">
+        </div>
+        <div class="form-group col-md-3">
+            <label class="sr-only" for="f1-last-name">Last name</label>
+            <input type="text" name="f1-last-name" placeholder="" class="f1-last-name form-control" id="f1-last-name">
+        </div>
+    </div>
+
+
+    <div class="f1-buttons">
+
+        <button type="button" class="btn btn-circle orange btn-sm btn-next">Next</button>
+    </div>
+</fieldset>
+
+<fieldset>
+    <div class="step-header">
+        <h4>Bravo!</h4>
+        <p>
+            l'étape 2 de cotre inscription à été réussi avec succès
+            <span>
+                                                     Nous avons envoyé un code de validation à votre adresse mobile
+                                                     <strong>veuillez le saissir </strong>
+                                                 </span>
+        </p>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-3">
+            <label class="sr-only" for="f1-first-name">First name</label>
+            <input type="text" name="f1-first-name" placeholder="" class="f1-first-name form-control" id="f1-first-name">
+        </div>
+        <div class="form-group col-md-3">
+            <label class="sr-only" for="f1-last-name">Last name</label>
+            <input type="text" name="f1-last-name" placeholder="" class="f1-last-name form-control" id="f1-last-name">
+        </div>
+        <div class="form-group col-md-3">
+            <label class="sr-only" for="f1-last-name">Last name</label>
+            <input type="text" name="f1-last-name" placeholder="" class="f1-last-name form-control" id="f1-last-name">
+        </div>
+        <div class="form-group col-md-3">
+            <label class="sr-only" for="f1-last-name">Last name</label>
+            <input type="text" name="f1-last-name" placeholder="" class="f1-last-name form-control" id="f1-last-name">
+        </div>
+    </div>
+    <div class="f1-buttons">
+        <button type="button" class="btn btn-circle orange btn-sm btn-next">Next</button>
+    </div>
+</fieldset>
+
+
+
+</form>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+</div>
+
+</div>
+</div>
+</div>

@@ -1,5 +1,5 @@
 angular
-    .module('appointmentModule')
+    .module('myApp')
     .component('app', {
 
         transclude: true,
@@ -10,7 +10,8 @@ angular
         $routeConfig: [
             { path: '/search/...', name: 'Search', component: 'search', useAsDefault: true },
             { path: '/profile/:id', name: 'Profile', component: 'profile' },
-            { path: '/appointment', name: 'Appointment', component: 'appointment' }
+            { path: '/appointment', name: 'Appointment', component: 'appointment' },
+            { path: '/patient/...', name: 'Patient', component: 'patient' }
         ]
 
     });
