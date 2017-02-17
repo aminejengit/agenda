@@ -2,9 +2,12 @@ angular
     .module('appointmentModule')
     .component('appointment', {
         transclude: true,
-        $canActivate: function (dataService) {
-            return dataService.isConnected();
-        },
+         $routeConfig: [
+            { path: '/search/...', name: 'Search', component: 'search', useAsDefault: true },
+            { path: '/profile/:id', name: 'Profile', component: 'profile' },
+        ]
+
+        ,
         controller: function appointmentController() {
 
         },

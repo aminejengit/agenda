@@ -8,9 +8,7 @@ angular
         templateUrl: '/partials/app.component.html',
 
         $routeConfig: [
-            { path: '/search/...', name: 'Search', component: 'search', useAsDefault: true },
-            { path: '/profile/:id', name: 'Profile', component: 'profile' },
-            { path: '/appointment', name: 'Appointment', component: 'appointment' },
+            { path: '/appointment/...', name: 'Appointment', component: 'appointment', useAsDefault: true  },
             { path: '/patient/...', name: 'Patient', component: 'patient' }
         ]
 
